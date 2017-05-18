@@ -40,3 +40,71 @@ public struct SteadyTimeDuration {
         )
     }
 }
+
+extension SteadyTimeDuration {
+    public static func +(lhs: SteadyTimeDuration, rhs: SteadyTimeDuration) -> SteadyTimeDuration {
+        var result = SteadyTimeDuration(
+                sec: lhs.timeSpec.tv_sec + rhs.timeSpec.tv_sec,
+                nsec: lhs.timeSpec.tv_nsec + rhs.timeSpec.tv_nsec
+        )
+
+        if result.timeSpec.tv_nsec >= Int(1E9) {
+            result.timeSpec.tv_sec += 1
+            result.timeSpec.tv_nsec -= Int(1E9)
+        }
+
+        return result
+    }
+
+    public static func -(lhs: SteadyTimeDuration, rhs: SteadyTimeDuration) -> SteadyTimeDuration {
+        var result = SteadyTimeDuration(
+                sec: lhs.timeSpec.tv_sec - rhs.timeSpec.tv_sec,
+                nsec: lhs.timeSpec.tv_nsec - rhs.timeSpec.tv_nsec
+        )
+
+        if result.timeSpec.tv_nsec < 0 {
+            result.timeSpec.tv_sec -= 1
+            result.timeSpec.tv_nsec += Int(1E9)
+        }
+
+        return result
+    }
+}
+
+extension SteadyTimeDuration: Equatable {
+    public static func ==(lhs: SteadyTimeDuration, rhs: SteadyTimeDuration) -> Bool {
+        return lhs.timeSpec.tv_sec == rhs.timeSpec.tv_sec && lhs.timeSpec.tv_nsec == rhs.timeSpec.tv_nsec
+    }
+
+    public static func <(lhs: SteadyTimeDuration, rhs: SteadyTimeDuration) -> Bool {
+        if lhs.timeSpec.tv_sec < rhs.timeSpec.tv_sec {
+            return true
+        }
+
+        if lhs.timeSpec.tv_sec > rhs.timeSpec.tv_sec {
+            return false
+        }
+
+        return lhs.timeSpec.tv_nsec < rhs.timeSpec.tv_nsec
+    }
+
+    public static func >(lhs: SteadyTimeDuration, rhs: SteadyTimeDuration) -> Bool {
+        if lhs.timeSpec.tv_sec > rhs.timeSpec.tv_sec {
+            return true
+        }
+
+        if lhs.timeSpec.tv_sec < rhs.timeSpec.tv_sec {
+            return false
+        }
+
+        return lhs.timeSpec.tv_nsec > rhs.timeSpec.tv_nsec
+    }
+
+    public static func <=(lhs: SteadyTimeDuration, rhs: SteadyTimeDuration) -> Bool {
+        return !(lhs > rhs)
+    }
+
+    public static func >=(lhs: SteadyTimeDuration, rhs: SteadyTimeDuration) -> Bool {
+        return !(lhs < rhs)
+    }
+}

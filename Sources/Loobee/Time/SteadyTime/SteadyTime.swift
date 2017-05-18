@@ -49,4 +49,34 @@ public struct SteadyTime {
     public func diff(other: SteadyTime) -> SteadyTimeDuration {
         return durationFromUnixEpoch.diff(other: other.durationFromUnixEpoch)
     }
+
+    public static func +(steadyTime: SteadyTime, duration: SteadyTimeDuration) -> SteadyTime {
+        return SteadyTime(durationFromUnixEpoch: steadyTime.durationFromUnixEpoch + duration)
+    }
+
+    public static func -(steadyTime: SteadyTime, duration: SteadyTimeDuration) -> SteadyTime {
+        return SteadyTime(durationFromUnixEpoch: steadyTime.durationFromUnixEpoch - duration)
+    }
+}
+
+extension SteadyTime: Equatable {
+    public static func ==(lhs: SteadyTime, rhs: SteadyTime) -> Bool {
+        return lhs.durationFromUnixEpoch == rhs.durationFromUnixEpoch
+    }
+
+    public static func <(lhs: SteadyTime, rhs: SteadyTime) -> Bool {
+        return lhs.durationFromUnixEpoch < rhs.durationFromUnixEpoch
+    }
+
+    public static func >(lhs: SteadyTime, rhs: SteadyTime) -> Bool {
+        return lhs.durationFromUnixEpoch > rhs.durationFromUnixEpoch
+    }
+
+    public static func <=(lhs: SteadyTime, rhs: SteadyTime) -> Bool {
+        return lhs.durationFromUnixEpoch <= rhs.durationFromUnixEpoch
+    }
+
+    public static func >=(lhs: SteadyTime, rhs: SteadyTime) -> Bool {
+        return lhs.durationFromUnixEpoch >= rhs.durationFromUnixEpoch
+    }
 }
