@@ -1,0 +1,13 @@
+# Project
+Makefile.in.qRoC
+
+# OS X
+.DS_Store
+
+# Swift Package Manager
+/.build
+/Packages
+/*.xcodeproj
+
+# Idea
+/.idea

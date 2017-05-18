@@ -1,0 +1,33 @@
+opt_in_rules:
+  - attributes
+  - closure_end_indentation
+  - closure_spacing
+  - empty_count
+  - explicit_init
+  - fatal_error_message
+  - file_header
+  - first_where
+  - force_unwrapping
+  - implicitly_unwrapped_optional
+  - missing_docs
+  - nimble_operator
+  - number_separator
+  - object_literal
+  - operator_usage_whitespace
+  - conditional_returns_on_newline
+  - overridden_super_call
+  - private_outlet
+  - prohibited_super_call
+  - redundant_nil_coalescing
+  - switch_case_on_newline
+  - valid_docs
+reporter: "json"
+line_length: 120
+file_header:
+  required_pattern: |
+                    \/\/ This file is part of the Loobee package\.
+                    \/\/
+                    \/\/ \(c\) Andrey Savitsky <contact@qroc\.pro>
+                    \/\/
+                    \/\/ For the full copyright and license information, please view the LICENSE
+                    \/\/ file that was distributed with this source code\.

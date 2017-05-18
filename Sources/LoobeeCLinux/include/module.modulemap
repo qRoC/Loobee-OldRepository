@@ -1,0 +1,6 @@
+module LoobeeCLinux [system] {
+    module malloc {
+        header "linux_malloc.h"
+        export *
+    }
+}

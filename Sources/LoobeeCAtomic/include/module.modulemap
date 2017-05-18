@@ -1,0 +1,3 @@
+module LoobeeCAtomic {
+    header "atomic.h"
+}
