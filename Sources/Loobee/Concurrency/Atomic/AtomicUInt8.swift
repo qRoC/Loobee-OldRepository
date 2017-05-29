@@ -7,7 +7,7 @@
 
 import LoobeeCAtomic
 
-public struct AtomicUInt8 {
+public struct AtomicUInt8: Atomic, AtomicArithmetic, AtomicBitwise {
     private var val: UInt8
 
     public init(_ value: UInt8) {
@@ -92,8 +92,8 @@ public struct AtomicUInt8 {
         return LoobeeCAtomicUInt8_fetchAndOr(&val, op: operand, order: order)
     }
 
-    public mutating func fetchAndXOr(_ operand: UInt8, order: AtomicOrder = .seqCst) -> UInt8 {
-        return LoobeeCAtomicUInt8_fetchAndXOr(&val, op: operand, order: order)
+    public mutating func fetchAndXor(_ operand: UInt8, order: AtomicOrder = .seqCst) -> UInt8 {
+        return LoobeeCAtomicUInt8_fetchAndXor(&val, op: operand, order: order)
     }
 
     public mutating func addAndFetch(_ operand: UInt8, order: AtomicOrder = .seqCst) -> UInt8 {
@@ -112,8 +112,8 @@ public struct AtomicUInt8 {
         return LoobeeCAtomicUInt8_orAndFetch(&val, op: operand, order: order)
     }
 
-    public mutating func xOrAndFetch(_ operand: UInt8, order: AtomicOrder = .seqCst) -> UInt8 {
-        return LoobeeCAtomicUInt8_xOrAndFetch(&val, op: operand, order: order)
+    public mutating func xorAndFetch(_ operand: UInt8, order: AtomicOrder = .seqCst) -> UInt8 {
+        return LoobeeCAtomicUInt8_xorAndFetch(&val, op: operand, order: order)
     }
 
     public static func +=(lhs: inout AtomicUInt8, rhs: UInt8) {
@@ -133,14 +133,6 @@ public struct AtomicUInt8 {
     }
 
     public static func ^=(lhs: inout AtomicUInt8, rhs: UInt8) {
-        _ = lhs.xOrAndFetch(rhs)
-    }
-
-    public static func ==(lhs: inout AtomicUInt8, rhs: UInt8) -> Bool {
-        return lhs.load() == rhs
-    }
-
-    public static func !=(lhs: inout AtomicUInt8, rhs: UInt8) -> Bool {
-        return lhs.load() != rhs
+        _ = lhs.xorAndFetch(rhs)
     }
 }

@@ -7,7 +7,7 @@
 
 import LoobeeCAtomic
 
-public struct AtomicBool {
+public struct AtomicBool: Atomic {
     private var val: Bool
 
     public init(_ value: Bool) {
@@ -74,13 +74,5 @@ public struct AtomicBool {
             order: AtomicOrder = .seqCst
     ) -> Bool {
         return compareExchangeStrong(expected: &expected, desired: desired, successOrder: order, failureOrder: order)
-    }
-
-    public static func ==(lhs: inout AtomicBool, rhs: Bool) -> Bool {
-        return lhs.load() == rhs
-    }
-
-    public static func !=(lhs: inout AtomicBool, rhs: Bool) -> Bool {
-        return lhs.load() != rhs
     }
 }

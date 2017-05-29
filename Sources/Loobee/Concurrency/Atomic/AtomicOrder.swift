@@ -7,4 +7,14 @@
 
 import LoobeeCAtomic
 
+/// Specifies how regular, non-atomic memory accesses are to be ordered around an atomic operation.
+///
+/// See [Wiki](http://en.cppreference.com/w/cpp/atomic/memory_order#Relaxed_ordering) for info.
+///
+/// - relaxed
+/// - consume
+/// - acquire
+/// - release
+/// - acqRel
+/// - seqCst
 public typealias AtomicOrder = LoobeeCAtomicOrder
