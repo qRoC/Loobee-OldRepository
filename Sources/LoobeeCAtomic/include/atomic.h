@@ -161,7 +161,7 @@ typedef SWIFT_ENUM(
         return __atomic_fetch_or(self, op, order); \
     } \
     static __inline__ __attribute__((__always_inline__)) \
-    __attribute((swift_name("LoobeeCAtomic"#swiftType"_fetchAndXOr(_:op:order:)"))) \
+    __attribute((swift_name("LoobeeCAtomic"#swiftType"_fetchAndXor(_:op:order:)"))) \
     cType loobee_atomic_##id##_fetch_and_xor( \
                                                      volatile cType *_Nonnull self, \
                                                      cType op, \
@@ -188,7 +188,7 @@ typedef SWIFT_ENUM(
         return __atomic_or_fetch(self, op, order); \
     } \
     static __inline__ __attribute__((__always_inline__)) \
-    __attribute((swift_name("LoobeeCAtomic"#swiftType"_xOrAndFetch(_:op:order:)"))) \
+    __attribute((swift_name("LoobeeCAtomic"#swiftType"_xorAndFetch(_:op:order:)"))) \
     cType loobee_atomic_##id##_xor_and_fetch( \
                                                      volatile cType *_Nonnull self, \
                                                      cType op, \
