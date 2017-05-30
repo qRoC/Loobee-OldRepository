@@ -11,7 +11,7 @@ SWIFTC_DEBUG_FLAGS += -Onone -g $(SWIFTC_COMMON_FLAGS)
 
 CC_COMMON_FLAGS = -Wextra
 CC_DEBUG_FLAGS += $(CC_COMMON_FLAGS)
-CC_RELEASE_FLAGS += -Ofast -march=native -ffast-math -$(CC_COMMON_FLAGS)
+CC_RELEASE_FLAGS += -Ofast -march=native -ffast-math $(CC_COMMON_FLAGS)
 
 #generatePassFlags = $(shell echo $(2) | sed -e "s/[^ ][^ ]*/-$(1) \"&\"/g")
 generatePassFlags = $(patsubst %,-$(1) "%",$(2))
