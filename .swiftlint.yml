@@ -13,7 +13,6 @@ opt_in_rules:
   - nimble_operator
   - number_separator
   - object_literal
-  - operator_usage_whitespace
   - conditional_returns_on_newline
   - overridden_super_call
   - private_outlet
