@@ -7,11 +7,13 @@
 
 import LoobeeCEnvironment
 
+/// Provides information about the current environment.
 public class Environment {
     public static let current = Environment()
 
     private init() {
     }
 
+    /// Returns discover details of the processor.
     public let cpuId = CpuId.current()
 }
