@@ -7,9 +7,9 @@
 
 /// Protocol of a container that exposes methods to read its entries.
 public protocol Container {
-    /// Returns true if the container contains an entry that implements the specified interface.
-    func has<Service>(implementationFor interface: Service.Type) -> Bool
+    /// Returns true if the container contains an entry that implements the specified protocol.
+    func has<EntryProtocol>(implementationFor protocol: EntryProtocol.Type) -> Bool
 
-    /// Returns entry that implements the specified interface.
-    func get<Service>(implementationFor interface: Service.Type) -> Service?
+    /// Returns entry that implements the specified protocol.
+    func get<EntryProtocol>(implementationFor protocol: EntryProtocol.Type) -> EntryProtocol?
 }
