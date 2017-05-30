@@ -1,3 +1,8 @@
+**Loobee Swift library (WIP)**
+
+`swift`, `loobee`, `memory`, `byte`, `logger`, `concurrency`, `atomic`,
+`thread`, `container`, `environment`, `time`.
+
 **WORK IN PROGRESS**
 
 My version `Makefile.in.$(USERNAME)`:
