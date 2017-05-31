@@ -13,7 +13,7 @@ fileprivate final class IndirectWrapper<T> {
     }
 }
 
-// Враппер вокруг объекта для реализации механизма copy on write.
+// A wrapper around the object to implement the copy on write mechanism.
 public struct IndirectBox<T> {
     fileprivate var wrapper: IndirectWrapper<T>
 
