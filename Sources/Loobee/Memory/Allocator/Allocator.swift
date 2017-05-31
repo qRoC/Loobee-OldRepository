@@ -6,32 +6,31 @@
 // file that was distributed with this source code.
 
 public struct AllocatorStats {
-    var allocatesCount: Int
-    var totalAllocatedSize: Int
-    var reservedSize: Int
-    var largestRelease: Int
+    public var allocatesCount: Int
+    public var totalAllocatedSize: Int
+    public var reservedSize: Int
+    public var largestRelease: Int
 }
 
 public protocol Allocator {
-    /// Имя аллокатора для отладки.
+    /// Allocator debug name.
     var debugName: StaticString { get }
 
-    /// Статистика аллокатора.
+    /// Allocator stats.
     var stats: AllocatorStats { get }
 
-    /// Выделяет область памяти размером `size`, выравнивая её по `alignment`.
+    /// Allocates a memory area size `size` bytes aligned on a boundary specified by `alignment`.
     func allocate(_ size: Int, alignment: Int) -> UnsafeMutableRawPointer?
 
-    /// Очищает область памяти.
+    /// Release memory area.
     func release(_ pointer: UnsafeRawPointer)
 
-    /// Получить информацию о размере аллокации.
+    /// Returns information about size of memory arena.
     func getAllocationSize(_ pointer: UnsafeRawPointer) -> Int
 
-    /// Заполнить `length` байт блока памяти на который указывает указатель `destPtr` значением `data`.
+    /// Fills `length` bytes of the memory area pointed by `destPtr` by value `data`.
     func fill(destPointer: UnsafeMutableRawPointer, data: Int32, length: Int)
 
-    /// Заполнить `length` байт блока памяти на который указывает указатель `destPtr` значением блока на который
-    /// указывает `srcPtr`.
+    /// Fills `length` bytes of the memory area pointed by `destPtr` by value from `srcPtr`.
     func fill(destPointer: UnsafeMutableRawPointer, srcPointer: UnsafeRawPointer, length: Int)
 }

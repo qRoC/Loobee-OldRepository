@@ -12,7 +12,7 @@ public class MemoryArenaManager {
         self.memoryArena = memoryArena
     }
 
-    /// Выделяет область памяти размером `size`, выравнивая её по `alignment`.
+    /// Allocates a memory area size `size` bytes aligned on a boundary specified by `alignment`.
     func allocate(_ size: Int, alignment: Int, saveSizeInfo: Bool) -> UnsafeMutableRawPointer? {
         precondition(alignment >= 4)
         precondition(alignment <= 128)
@@ -38,9 +38,9 @@ public class MemoryArenaManager {
         return pointer.advanced(by: alignment)
     }
 
-    /// Очищает область памяти.
-    /// Аргумент `size` игнорируется при `MemoryArena.sizeStored=true`,
-    /// или если метод `allocate` был вызван  с `saveSizeInfo=true`.
+    /// Release memory area. Argument `size` is ignored when `memoryArena.sizeStored = true`, or if method
+    /// `allocate` called with `saveSizeInfo=true`.
+    /// The function does nothing if `memoryArena.noRelease = true`
     func release(_ pointer: UnsafeRawPointer, size: Int) {
         if self.memoryArena.noRelease {
             return

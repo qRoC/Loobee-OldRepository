@@ -6,23 +6,21 @@
 // file that was distributed with this source code.
 
 public protocol MemoryArena {
-    /// Имя арены для отладки.
+    /// Arena debug name.
     var debugName: StaticString { get }
 
-    /// Арена сохраняет информацию о размере выделенной области.
+    /// Implementation Flag: Arena saves information about the size of the allocated area.
     var sizeStored: Bool { get }
 
-    /// Арена не очищает выделенные ею области с помощью метода `release`.
+    /// Implementation Flag: Arena does not purge the allocated areas with the `release` method.
     var noRelease: Bool { get }
 
-    /// Размер общей выделенной области данной арены.
+    /// Size of the total allocated bytes of this arena.
     var bytesAllocated: Int { get }
 
-    /// Выделяет область памяти размером `size`, выравнивая её по `alignment`.
+    /// Allocates a memory area size `size` bytes aligned on a boundary specified by `alignment`.
     func allocate(_ size: Int, alignment: Int) -> UnsafeMutableRawPointer?
 
-    /// Очищает область памяти.
-    ///
-    /// Аргумент `size` игнорируется при `sizeStored=true`.
+    /// Release memory area. Argument `size` is ignored when `sizeStored = true`.
     func release(_ pointer: UnsafeRawPointer, size: Int)
 }
