@@ -5,36 +5,38 @@
 // For the full copyright and license information, please view the LICENSE
 // file that was distributed with this source code.
 
-/// Сообщения могут содержать плейсхолдеры в формате: {name}, где "name" имя ключа в словаре context.
+/// Logger protocol.
+///
+/// Messages can contain placeholders.
+/// Placeholders form: {name}, where "name" is the name of the key in the context dictionary.
 public protocol Logger {
-
     typealias ContextData = [String: String]
 
-    /// Система непригодна для использования.
+    /// System is unusable.
     func emergency(_ message: String, context: ContextData)
 
-    /// Необходимо принять меры немедленно.
+    /// Action must be taken immediately.
     func alert(_ message: String, context: ContextData)
 
-    /// Критическая ошибка.
+    /// Critical conditions.
     func critical(_ message: String, context: ContextData)
 
-    /// Ошибка, которая не требует немедленных действий, но должна быть зарегистрирована.
+    /// An error that does not require immediate action, but must be registered.
     func error(_ message: String, context: ContextData)
 
-    /// Использование нежелательных вещей, неверное использование, т.п.
+    /// Use of undesirable things, misuse, etc.
     func warning(_ message: String, context: ContextData)
 
-    /// Значимые уведомления, которые не свидетельствуют о ошибках, а скорей просто сигнализируют о наступлении события.
+    /// Significant notifications that do not indicate errors, but rather simply signal the occurrence of an event.
     func notice(_ message: String, context: ContextData)
 
-    /// Незначимые уведомления.
+    /// Minor notifications.
     func info(_ message: String, context: ContextData)
 
-    /// Уведомления которые полезны при отладке.
+    /// Detailed debug information.
     func debug(_ message: String, context: ContextData)
 
-    // Запись с произвольным уровнем.
+    // Logs with an arbitrary level.
     func log(_ level: LogLevel, _ message: String, context: ContextData)
 }
 
