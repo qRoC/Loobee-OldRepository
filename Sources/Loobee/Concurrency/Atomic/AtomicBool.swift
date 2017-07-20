@@ -14,7 +14,7 @@ public struct AtomicBool: Atomic {
         val = value
     }
 
-    public static func isLockFree() -> Bool {
+    public static func isAlwaysLockFree() -> Bool {
         return LoobeeCAtomicBool_isLockFree
     }
 

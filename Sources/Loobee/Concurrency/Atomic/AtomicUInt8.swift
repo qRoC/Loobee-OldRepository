@@ -14,7 +14,7 @@ public struct AtomicUInt8: Atomic, AtomicArithmetic, AtomicBitwise {
         val = value
     }
 
-    public static func isLockFree() -> Bool {
+    public static func isAlwaysLockFree() -> Bool {
         return LoobeeCAtomicUInt8_isLockFree
     }
 

@@ -13,7 +13,7 @@ public protocol Atomic {
     init(_ value: IntegralType)
 
     /// Return true if the type is always lock-free.
-    static func isLockFree() -> Bool
+    static func isAlwaysLockFree() -> Bool
 
     /// Atomically assign the value of the atomic object.
     ///

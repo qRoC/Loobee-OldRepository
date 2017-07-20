@@ -14,7 +14,7 @@ public struct AtomicInt16: Atomic, AtomicArithmetic, AtomicBitwise {
         val = value
     }
 
-    public static func isLockFree() -> Bool {
+    public static func isAlwaysLockFree() -> Bool {
         return LoobeeCAtomicInt16_isLockFree
     }
 
