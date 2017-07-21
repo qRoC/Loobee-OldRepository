@@ -7,7 +7,7 @@
 
 /// Each realization defines an atomic type. This type are thread safe.
 public protocol Atomic {
-    associatedtype IntegralType
+    associatedtype IntegralType: Equatable
 
     /// Create atomic object from integral value.
     init(_ value: IntegralType)

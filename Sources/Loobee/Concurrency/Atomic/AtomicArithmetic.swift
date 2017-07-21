@@ -6,7 +6,7 @@
 // file that was distributed with this source code.
 
 public protocol AtomicArithmetic {
-    associatedtype IntegralType
+    associatedtype IntegralType: Numeric
 
     /// Atomically add the integral value to the value in the atomic object and return the value held previously.
     ///
