@@ -6,7 +6,7 @@
 // file that was distributed with this source code.
 
 public protocol AtomicBitwise {
-    associatedtype IntegralType: _BitwiseOperations
+    associatedtype IntegralType: FixedWidthInteger
 
     /// Atomically performs bitwise AND between the integral value and the value in the atomic object
     /// and return the value held previously.
