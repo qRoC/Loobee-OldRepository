@@ -8,28 +8,34 @@
 import LoobeeCAtomic
 
 public struct AtomicBool: Atomic {
-    private var val: Bool
+    @_versioned var val: Bool
 
+    @inline(__always)
     public init(_ value: Bool) {
         val = value
     }
 
+    @inline(__always)
     public static func isAlwaysLockFree() -> Bool {
         return LoobeeCAtomicBool_isLockFree
     }
 
+    @inline(__always)
     public mutating func store(_ desired: Bool, order: AtomicOrder = .seqCst) {
         LoobeeCAtomicBool_store(&val, desired: desired, order: order)
     }
 
+    @inline(__always)
     public mutating func load(order: AtomicOrder = .seqCst) -> Bool {
         return LoobeeCAtomicBool_load(&val, order: order)
     }
 
+    @inline(__always)
     public mutating func exchange(_ desired: Bool, order: AtomicOrder = .seqCst) -> Bool {
         return LoobeeCAtomicBool_exchange(&val, desired: desired, order: order)
     }
 
+    @inline(__always)
     public mutating func compareExchangeWeak(
             expected: inout Bool,
             desired: Bool,
@@ -45,6 +51,7 @@ public struct AtomicBool: Atomic {
         )
     }
 
+    @inline(__always)
     public mutating func compareExchangeWeak(
             expected: inout Bool,
             desired: Bool,
@@ -53,6 +60,7 @@ public struct AtomicBool: Atomic {
         return compareExchangeWeak(expected: &expected, desired: desired, successOrder: order, failureOrder: order)
     }
 
+    @inline(__always)
     public mutating func compareExchangeStrong(
             expected: inout Bool,
             desired: Bool,
@@ -68,6 +76,7 @@ public struct AtomicBool: Atomic {
         )
     }
 
+    @inline(__always)
     public mutating func compareExchangeStrong(
             expected: inout Bool,
             desired: Bool,
