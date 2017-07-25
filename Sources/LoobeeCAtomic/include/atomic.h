@@ -6,6 +6,7 @@
 // file that was distributed with this source code.
 
 #include <stdbool.h>
+#include <stddef.h>
 #include <stdint.h>
 #include <assert.h>
 
@@ -41,10 +42,10 @@ typedef SWIFT_ENUM(
         __atomic_store_n(self, desired, order); \
     }
 
-#define LOOBEE_ATOMIC_LOAD(id, cType, swiftType) \
+#define LOOBEE_ATOMIC_LOAD(id, cType, swiftType, qualifier) \
     static __inline__ __attribute__((__always_inline__)) \
     __attribute((swift_name("LoobeeCAtomic"#swiftType"_load(_:order:)"))) \
-    cType loobee_atomic_##id##_load( \
+    qualifier cType loobee_atomic_##id##_load( \
                                                 volatile cType *_Nonnull self, \
                                                 loobee_atomic_order_t order \
                                                 ) { \
@@ -55,10 +56,10 @@ typedef SWIFT_ENUM(
         return __atomic_load_n(self, order); \
     }
 
-#define LOOBEE_ATOMIC_EXCHANGE(id, cType, swiftType) \
+#define LOOBEE_ATOMIC_EXCHANGE(id, cType, swiftType, qualifier) \
     static __inline__ __attribute__((__always_inline__)) \
     __attribute((swift_name("LoobeeCAtomic"#swiftType"_exchange(_:desired:order:)"))) \
-    cType loobee_atomic_##id##_exchange( \
+    qualifier cType loobee_atomic_##id##_exchange( \
                                                  volatile cType *_Nonnull self, \
                                                  cType desired, \
                                                  loobee_atomic_order_t order \
@@ -71,12 +72,12 @@ typedef SWIFT_ENUM(
         return __atomic_exchange_n(self, desired, order); \
     }
 
-#define LOOBEE_ATOMIC_COMPARE_EXCHANGE(id, cType, swiftType) \
+#define LOOBEE_ATOMIC_COMPARE_EXCHANGE(id, cType, swiftType, qualifier) \
     static __inline__ __attribute__((__always_inline__)) \
     __attribute((swift_name("LoobeeCAtomic"#swiftType"_compareExchangeWeak(_:expected:desired:successOrder:failureOrder:)"))) \
     bool loobee_atomic_##id##_compare_exchange_weak( \
                                                  volatile cType *_Nonnull self, \
-                                                 cType *_Nonnull expected, \
+                                                 qualifier cType *_Nonnull expected, \
                                                  cType desired, \
                                                  loobee_atomic_order_t successOrder, \
                                                  loobee_atomic_order_t failureOrder \
@@ -91,7 +92,7 @@ typedef SWIFT_ENUM(
     __attribute((swift_name("LoobeeCAtomic"#swiftType"_compareExchangeStrong(_:expected:desired:successOrder:failureOrder:)"))) \
     bool loobee_atomic_##id##_compare_exchange_strong( \
                                                  volatile cType *_Nonnull self, \
-                                                 cType *_Nonnull expected, \
+                                                 qualifier cType *_Nonnull expected, \
                                                  cType desired, \
                                                  loobee_atomic_order_t successOrder, \
                                                  loobee_atomic_order_t failureOrder \
@@ -103,39 +104,39 @@ typedef SWIFT_ENUM(
         return __atomic_compare_exchange_n(self, expected, desired, false, successOrder, failureOrder); \
     }
 
-#define LOOBEE_ATOMIC_MATH(id, cType, swiftType) \
+#define LOOBEE_ATOMIC_MATH(id, cType, cTypeOp, swiftType, qualifier) \
     static __inline__ __attribute__((__always_inline__)) \
     __attribute((swift_name("LoobeeCAtomic"#swiftType"_fetchAndAdd(_:op:order:)"))) \
-    cType loobee_atomic_##id##_fetch_and_add( \
+    qualifier cType loobee_atomic_##id##_fetch_and_add( \
                                                      volatile cType *_Nonnull self, \
-                                                     cType op, \
+                                                     cTypeOp op, \
                                                      loobee_atomic_order_t order \
                                                      ) { \
         return __atomic_fetch_add(self, op, order); \
     } \
     static __inline__ __attribute__((__always_inline__)) \
     __attribute((swift_name("LoobeeCAtomic"#swiftType"_fetchAndSub(_:op:order:)"))) \
-    cType loobee_atomic_##id##_fetch_and_sub( \
+    qualifier cType loobee_atomic_##id##_fetch_and_sub( \
                                                      volatile cType *_Nonnull self, \
-                                                     cType op, \
+                                                     cTypeOp op, \
                                                      loobee_atomic_order_t order \
                                                      ) { \
         return __atomic_fetch_sub(self, op, order); \
     } \
     static __inline__ __attribute__((__always_inline__)) \
     __attribute((swift_name("LoobeeCAtomic"#swiftType"_addAndFetch(_:op:order:)"))) \
-    cType loobee_atomic_##id##_add_and_fetch( \
+    qualifier cType loobee_atomic_##id##_add_and_fetch( \
                                                      volatile cType *_Nonnull self, \
-                                                     cType op, \
+                                                     cTypeOp op, \
                                                      loobee_atomic_order_t order \
                                                      ) { \
         return __atomic_add_fetch(self, op, order); \
     } \
     static __inline__ __attribute__((__always_inline__)) \
     __attribute((swift_name("LoobeeCAtomic"#swiftType"_subAndFetch(_:op:order:)"))) \
-    cType loobee_atomic_##id##_sub_and_fetch( \
+    qualifier cType loobee_atomic_##id##_sub_and_fetch( \
                                                      volatile cType *_Nonnull self, \
-                                                     cType op, \
+                                                     cTypeOp op, \
                                                      loobee_atomic_order_t order \
                                                      ) { \
         return __atomic_sub_fetch(self, op, order); \
@@ -199,17 +200,17 @@ typedef SWIFT_ENUM(
 // =====================================================================================================================
 LOOBEE_ATOMIC_IS_LOCK_FREE(bool, bool, Bool)
 LOOBEE_ATOMIC_STORE(bool, bool, Bool)
-LOOBEE_ATOMIC_LOAD(bool, bool, Bool)
-LOOBEE_ATOMIC_EXCHANGE(bool, bool, Bool)
-LOOBEE_ATOMIC_COMPARE_EXCHANGE(bool, bool, Bool)
+LOOBEE_ATOMIC_LOAD(bool, bool, Bool,)
+LOOBEE_ATOMIC_EXCHANGE(bool, bool, Bool,)
+LOOBEE_ATOMIC_COMPARE_EXCHANGE(bool, bool, Bool,)
 
 #define LOOBEE_ATOMIC_SCALAR(id, cType, swiftType) \
     LOOBEE_ATOMIC_IS_LOCK_FREE(id, cType, swiftType) \
     LOOBEE_ATOMIC_STORE(id, cType, swiftType) \
-    LOOBEE_ATOMIC_LOAD(id, cType, swiftType) \
-    LOOBEE_ATOMIC_EXCHANGE(id, cType, swiftType) \
-    LOOBEE_ATOMIC_COMPARE_EXCHANGE(id, cType, swiftType) \
-    LOOBEE_ATOMIC_MATH(id, cType, swiftType) \
+    LOOBEE_ATOMIC_LOAD(id, cType, swiftType,) \
+    LOOBEE_ATOMIC_EXCHANGE(id, cType, swiftType,) \
+    LOOBEE_ATOMIC_COMPARE_EXCHANGE(id, cType, swiftType,) \
+    LOOBEE_ATOMIC_MATH(id, cType, cType, swiftType,) \
     LOOBEE_ATOMIC_BIT(id, cType, swiftType)
 
 LOOBEE_ATOMIC_SCALAR(uint8, uint8_t, UInt8)
@@ -220,3 +221,10 @@ LOOBEE_ATOMIC_SCALAR(uint32, uint32_t, UInt32)
 LOOBEE_ATOMIC_SCALAR(int32, int32_t, Int32)
 LOOBEE_ATOMIC_SCALAR(uint64, uint64_t, UInt64)
 LOOBEE_ATOMIC_SCALAR(int64, int64_t, Int64)
+
+LOOBEE_ATOMIC_IS_LOCK_FREE(pointer, void *_Nullable, UnsafeMutableRawPointer)
+LOOBEE_ATOMIC_STORE(pointer, void *_Nullable, UnsafeMutableRawPointer)
+LOOBEE_ATOMIC_LOAD(pointer, void *_Nullable, UnsafeMutableRawPointer, volatile)
+LOOBEE_ATOMIC_EXCHANGE(pointer, void *_Nullable, UnsafeMutableRawPointer, volatile)
+LOOBEE_ATOMIC_COMPARE_EXCHANGE(pointer, void *_Nullable, UnsafeMutableRawPointer, volatile)
+LOOBEE_ATOMIC_MATH(pointer, void *_Nullable, ptrdiff_t, UnsafeMutableRawPointer, volatile)

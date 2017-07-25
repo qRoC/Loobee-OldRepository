@@ -6,11 +6,22 @@
 // file that was distributed with this source code.
 
 import XCTest
-@testable import EnvironmentTests
 @testable import ByteTests
+@testable import ConcurrencyTests
 
 XCTMain([
-    testCase(EnvironmentTests.allTests),
+    /// ByteTests
+    testCase(ByteTests.allTests),
 
-    testCase(ByteTests.allTests)
+    /// ConcurrencyTests
+    testCase(AtomicInt8Tests.allTests),
+    testCase(AtomicInt16Tests.allTests),
+    testCase(AtomicInt32Tests.allTests),
+    testCase(AtomicInt64Tests.allTests),
+    testCase(AtomicUInt8Tests.allTests),
+    testCase(AtomicUInt16Tests.allTests),
+    testCase(AtomicUInt32Tests.allTests),
+    testCase(AtomicUInt64Tests.allTests),
+    testCase(AtomicBoolTests.allTests),
+    testCase(AtomicRawPointerTests.allTests)
 ])
