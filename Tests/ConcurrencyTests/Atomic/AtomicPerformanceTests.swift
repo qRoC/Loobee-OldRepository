@@ -67,8 +67,6 @@ class AtomicPerformanceTests: XCTestCase {
                 _ = atomic.compareExchangeWeak(expected: &i, desired: i + 1)
             }
         }
-
-        print(atomic.load(order: .relaxed))
     }
 
     func testPerformanceCASFailure() {
@@ -79,7 +77,5 @@ class AtomicPerformanceTests: XCTestCase {
                 _ = atomic.compareExchangeWeak(expected: &i, desired: 0)
             }
         }
-
-        print(atomic.load(order: .relaxed))
     }
 }
