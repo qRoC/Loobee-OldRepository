@@ -23,5 +23,6 @@ XCTMain([
     testCase(AtomicUInt32Tests.allTests),
     testCase(AtomicUInt64Tests.allTests),
     testCase(AtomicBoolTests.allTests),
-    testCase(AtomicRawPointerTests.allTests)
+    testCase(AtomicRawPointerTests.allTests),
+    testCase(AtomicPerformanceTests.allTests)
 ])
