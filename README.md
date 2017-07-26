@@ -1,12 +1,12 @@
-**Loobee is a library of Swift components.**
+## Loobee is a library of Swift components.
 
 **WORK IN PROGRESS**
 
 ![WIP](https://img.shields.io/badge/status-WIP-red.svg?style=flat)
 [![Build Status - Master](https://travis-ci.org/qRoC/Loobee.svg?branch=master)](https://travis-ci.org/qRoC/Loobee)
-![macOS](https://img.shields.io/badge/os-macOS-green.svg?style=flat)
-![Linux](https://img.shields.io/badge/os-linux-green.svg?style=flat)
-![MIT](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)
+![macOS](https://img.shields.io/badge/Swift-4.0-green.svg?style=flat)
+![Platforms](https://img.shields.io/badge/platforms-OS%20X%20%7C%20Linux%20-green.svg?style=flat)
+![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)
 
 ## Summary
 
