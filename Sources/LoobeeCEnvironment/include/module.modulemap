@@ -1,3 +1,0 @@
-module LoobeeCEnvironment {
-    header "cpu_id.h"
-}

@@ -1,5 +1,6 @@
 test:
-  image: swift:3.1
+  image: swift:4.2
   volumes:
-    - ./:/test/
-  command: bash -c "cd /test/; make clean; make test"
+    - ./:/source/
+  command: bash -c "cd /source/; make clean; make test"
+

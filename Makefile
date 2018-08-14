@@ -36,8 +36,8 @@ test-safe-release:
 	swift test --configuration release $(SWIFT_FLAGS) $(call generatePassFlags,Xswiftc,$(filter-out -whole-module-optimization,$(SWIFTC_SAFE_RELEASE_FLAGS)) -g -enable-testing) $(call generatePassFlags,Xcc,$(CC_RELEASE_FLAGS)) $(call generatePassFlags,Xlinker,$(LINKER_RELEASE_FLAGS))
 test-release:
 	swift test --configuration release $(SWIFT_FLAGS) $(call generatePassFlags,Xswiftc,$(filter-out -whole-module-optimization,$(SWIFTC_RELEASE_FLAGS)) -g -enable-testing) $(call generatePassFlags,Xcc,$(CC_RELEASE_FLAGS)) $(call generatePassFlags,Xlinker,$(LINKER_RELEASE_FLAGS))
-test-docker: docker-env
-	$(DOCKER_ENV) && docker-compose run test
+test-docker:
+	docker-compose run test
 
 .PHONY: clean
 clean:
@@ -46,3 +46,4 @@ clean:
 .PHONY: xcode
 xcode:
 	swift package generate-xcodeproj
+

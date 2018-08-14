@@ -7,18 +7,18 @@ matrix:
       language: generic
       sudo: required
       env:
-        - CLANG_VERSION=3.8
-        - BUILD_LINK=https://swift.org/builds/development/ubuntu1404/swift-DEVELOPMENT-SNAPSHOT-2017-07-24-a/swift-DEVELOPMENT-SNAPSHOT-2017-07-24-a-ubuntu14.04.tar.gz
+        - CLANG_VERSION=4.2
+        - BUILD_LINK=https://swift.org/builds/development/ubuntu1404/swift-DEVELOPMENT-SNAPSHOT-2018-08-10-a/swift-DEVELOPMENT-SNAPSHOT-2018-08-10-a-ubuntu14.04.tar.gz
 
     - os: osx
-      osx_image: xcode9
+      osx_image: xcode9.4
       env:
-        - BUILD_LINK=https://swift.org/builds/swift-4.0-branch/xcode/swift-4.0-DEVELOPMENT-SNAPSHOT-2017-07-24-a/swift-4.0-DEVELOPMENT-SNAPSHOT-2017-07-24-a-osx.pkg
+        - BUILD_LINK=https://swift.org/builds/swift-4.2-branch/xcode/swift-4.2-DEVELOPMENT-SNAPSHOT-2018-08-10-a/swift-4.2-DEVELOPMENT-SNAPSHOT-2018-08-10-a-osx.pkg
 
 before_install:
-  - sudo /bin/bash Scripts/travis-clang.sh
-  - chmod u+x Scripts/travis-swift.sh
-  - . Scripts/travis-swift.sh
+  - sudo /bin/bash scripts/travis-clang.sh
+  - chmod u+x scripts/travis-swift.sh
+  - . scripts/travis-swift.sh
 
 before_script:
   - clang --version
@@ -26,3 +26,4 @@ before_script:
 
 script:
   - make
+

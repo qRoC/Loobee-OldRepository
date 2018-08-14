@@ -4,7 +4,7 @@
 
 ![WIP](https://img.shields.io/badge/status-WIP-red.svg?style=flat)
 [![Build Status - Master](https://travis-ci.org/qRoC/Loobee.svg?branch=master)](https://travis-ci.org/qRoC/Loobee)
-![macOS](https://img.shields.io/badge/Swift-4.0-green.svg?style=flat)
+![macOS](https://img.shields.io/badge/Swift-4.2-green.svg?style=flat)
 ![Platforms](https://img.shields.io/badge/platforms-OS%20X%20%7C%20Linux%20-green.svg?style=flat)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)
 
@@ -59,22 +59,6 @@ Make commands:
  - `clean` - clean
  - `xcode` - generate Xcode project
  
-For customize build create `Makefile.in.$(USERNAME)`:
-
-Sample file content:
-
-```
-CC_RELEASE_FLAGS += -fcolor-diagnostics
-CC_DEBUG_FLAGS += -fcolor-diagnostics
-
-docker-run:
-	@docker-machine start loobee || true
-
-.PHONY: docker-env
-docker-env: docker-run
-	$(eval DOCKER_ENV := $(shell docker-machine env loobee))
-```
-
 ## Contributing to Loobee
 
 All improvements to Loobee are very welcome!
