@@ -1,10 +1,14 @@
-# OS X
-.DS_Store
-
 # Swift Package Manager
 /.build
 /Packages
 /*.xcodeproj
+Package.resolved
+
+# XCode
+/build
+
+# OS X
+.DS_Store
 
 # Idea
 /.idea

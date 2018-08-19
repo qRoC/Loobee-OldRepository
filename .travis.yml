@@ -20,6 +20,7 @@ before_install:
   - . scripts/travis-swift.sh
 
 before_script:
+  - uname -a
   - clang --version
   - swift --version
 
