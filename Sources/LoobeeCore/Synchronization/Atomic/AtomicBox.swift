@@ -123,24 +123,30 @@ public final class AtomicBox<T> where T: AnyObject {
         successOrder: AtomicOrder,
         failureOrder: AtomicOrder
         ) -> Bool {
-        let expectedPointer = Unmanaged<T>.passUnretained(expected)
-        let desiredPointer = Unmanaged<T>.passUnretained(desired)
+        return withExtendedLifetime(desired) {
+            let expectedPointer = Unmanaged<T>.passUnretained(expected)
+            let desiredPointer = Unmanaged<T>.passUnretained(desired)
 
-        var expectedAddress = UInt(bitPattern: expectedPointer.toOpaque())
-        let desiredAddress = UInt(bitPattern: desiredPointer.toOpaque())
+            var expectedAddress = UInt(bitPattern: expectedPointer.toOpaque())
+            let desiredAddress = UInt(bitPattern: desiredPointer.toOpaque())
 
-        if self.address.atomicCompareAndExchangeWeak(
-            expected: &expectedAddress,
-            desired: desiredAddress,
-            successOrder: successOrder,
-            failureOrder: failureOrder
-            ) {
-            _ = desiredPointer.retain()
-            expectedPointer.release()
-            return true
+
+            let result = self.address.atomicCompareAndExchangeWeak(
+                expected: &expectedAddress,
+                desired: desiredAddress,
+                successOrder: successOrder,
+                failureOrder: failureOrder
+            )
+
+            expected = Unmanaged<T>.fromOpaque(UnsafeRawPointer(bitPattern: expectedAddress)!).takeUnretainedValue()
+
+            if result {
+                _ = desiredPointer.retain()
+                expectedPointer.release()
+            }
+
+            return result
         }
-
-        return false
     }
 
     /// Atomically compares the object of `self` with that of `expected` and performs `exchange`
@@ -217,25 +223,30 @@ public final class AtomicBox<T> where T: AnyObject {
         desired: T,
         successOrder: AtomicOrder,
         failureOrder: AtomicOrder
-        ) -> Bool {
-        let expectedPointer = Unmanaged<T>.passUnretained(expected)
-        let desiredPointer = Unmanaged<T>.passUnretained(desired)
+    ) -> Bool {
+        return withExtendedLifetime(desired) {
+            let expectedPointer = Unmanaged<T>.passUnretained(expected)
+            let desiredPointer = Unmanaged<T>.passUnretained(desired)
 
-        var expectedAddress = UInt(bitPattern: expectedPointer.toOpaque())
-        let desiredAddress = UInt(bitPattern: desiredPointer.toOpaque())
+            var expectedAddress = UInt(bitPattern: expectedPointer.toOpaque())
+            let desiredAddress = UInt(bitPattern: desiredPointer.toOpaque())
 
-        if self.address.atomicCompareAndExchangeStrong(
-            expected: &expectedAddress,
-            desired: desiredAddress,
-            successOrder: successOrder,
-            failureOrder: failureOrder
-            ) {
-            _ = desiredPointer.retain()
-            expectedPointer.release()
-            return true
+            let result = self.address.atomicCompareAndExchangeStrong(
+                expected: &expectedAddress,
+                desired: desiredAddress,
+                successOrder: successOrder,
+                failureOrder: failureOrder
+            )
+
+            expected = Unmanaged<T>.fromOpaque(UnsafeRawPointer(bitPattern: expectedAddress)!).takeUnretainedValue()
+
+            if result {
+                _ = desiredPointer.retain()
+                expectedPointer.release()
+            }
+
+            return result
         }
-
-        return false
     }
 
     /// Atomically compares the object of `self` with that of `expected` and performs `exchange`
