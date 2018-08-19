@@ -10,7 +10,7 @@
 
 ## Summary
 
-Swift is a set of components for the Swift programming language that provide support for tasks and structures such as 
+Loobee is a set of components for the Swift programming language that provide support for tasks and structures such as 
 `memory`, `byte`, `logger`, `concurrency`, `atomic`, `thread`, `container`, `environment`, `time`, etc.
 
 ## Table of Contents
