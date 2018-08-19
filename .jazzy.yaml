@@ -1,0 +1,16 @@
+module: Loobee
+author: qRoC
+github_url: https://github.com/qRoC/Loobee 
+
+theme: fullwidth
+clean: true
+exclude: [Packages]
+
+readme: README.md
+
+skip_undocumented: false
+hide_documentation_coverage: false
+
+swift_version: 4.2
+xcodebuild_arguments: [-project, Loobee.xcodeproj, -target, LoobeeCore, LIBRARY_SEARCH_PATHS=.build/debug]
+
