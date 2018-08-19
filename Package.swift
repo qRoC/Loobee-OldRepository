@@ -1,5 +1,12 @@
 // swift-tools-version:4.2
 
+// This file is part of the Loobee package.
+//
+// (c) Andrey Savitsky <contact@qroc.pro>
+//
+// For the full copyright and license information, please view the LICENSE
+// file that was distributed with this source code.
+
 import PackageDescription
 
 var targets: [PackageDescription.Target] = [
@@ -13,5 +20,6 @@ let package = Package(
     products: [
         .library(name: "LoobeeCore", targets: ["LoobeeCore"]),
     ],
-    targets: targets
+    targets: targets,
+    swiftLanguageVersions: [.v4_2]
 )
