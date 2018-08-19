@@ -6,3 +6,8 @@ plugins:
     enabled: true
   fixme:
     enabled: true
+
+exclude_patterns:
+- "Tests/"
+- "docs/"
+- "scripts/"
