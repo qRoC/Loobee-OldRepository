@@ -35,6 +35,41 @@ extension AtomicBoolTests {
     ]
 }
 
+extension AtomicBoxTests {
+    static let __allTests = [
+        ("testCompareAndExchangeStrongAcqRel", testCompareAndExchangeStrongAcqRel),
+        ("testCompareAndExchangeStrongAcquire", testCompareAndExchangeStrongAcquire),
+        ("testCompareAndExchangeStrongConsume", testCompareAndExchangeStrongConsume),
+        ("testCompareAndExchangeStrongDefault", testCompareAndExchangeStrongDefault),
+        ("testCompareAndExchangeStrongRelaxed", testCompareAndExchangeStrongRelaxed),
+        ("testCompareAndExchangeStrongRelease", testCompareAndExchangeStrongRelease),
+        ("testCompareAndExchangeStrongSeqCst", testCompareAndExchangeStrongSeqCst),
+        ("testCompareAndExchangeWeakAcqRel", testCompareAndExchangeWeakAcqRel),
+        ("testCompareAndExchangeWeakAcquire", testCompareAndExchangeWeakAcquire),
+        ("testCompareAndExchangeWeakConsume", testCompareAndExchangeWeakConsume),
+        ("testCompareAndExchangeWeakDefault", testCompareAndExchangeWeakDefault),
+        ("testCompareAndExchangeWeakRelaxed", testCompareAndExchangeWeakRelaxed),
+        ("testCompareAndExchangeWeakRelease", testCompareAndExchangeWeakRelease),
+        ("testCompareAndExchangeWeakSeqCst", testCompareAndExchangeWeakSeqCst),
+        ("testExchangeAcqRel", testExchangeAcqRel),
+        ("testExchangeAcquire", testExchangeAcquire),
+        ("testExchangeDefault", testExchangeDefault),
+        ("testExchangeRelaxed", testExchangeRelaxed),
+        ("testExchangeRelease", testExchangeRelease),
+        ("testExchangeSeqCst", testExchangeSeqCst),
+        ("testIsAlwaysLockFree", testIsAlwaysLockFree),
+        ("testLoadAcquire", testLoadAcquire),
+        ("testLoadConsume", testLoadConsume),
+        ("testLoadDefault", testLoadDefault),
+        ("testLoadRelaxed", testLoadRelaxed),
+        ("testLoadSeqCst", testLoadSeqCst),
+        ("testStoreDefault", testStoreDefault),
+        ("testStoreRelaxed", testStoreRelaxed),
+        ("testStoreRelease", testStoreRelease),
+        ("testStoreSeqCst", testStoreSeqCst),
+    ]
+}
+
 extension AtomicInt16Tests {
     static let __allTests = [
         ("testAddAndFetchAcqRel", testAddAndFetchAcqRel),
@@ -562,14 +597,27 @@ extension AtomicIntTests {
 
 extension AtomicTests {
     static let __allTests = [
+        ("testAddAndFetch", testAddAndFetch),
+        ("testAddOperator", testAddOperator),
+        ("testBitAndAndFetch", testBitAndAndFetch),
+        ("testBitOrAndFetch", testBitOrAndFetch),
+        ("testBitXOrAndFetch", testBitXOrAndFetch),
         ("testCompareAndExchangeStrong", testCompareAndExchangeStrong),
         ("testCompareAndExchangeWeak", testCompareAndExchangeWeak),
         ("testExchange", testExchange),
         ("testFetchAndAdd", testFetchAndAdd),
+        ("testFetchAndBitAnd", testFetchAndBitAnd),
+        ("testFetchAndBitOr", testFetchAndBitOr),
+        ("testFetchAndBitXor", testFetchAndBitXor),
         ("testFetchAndSub", testFetchAndSub),
         ("testIsAlwaysLockFree", testIsAlwaysLockFree),
         ("testLoad", testLoad),
+        ("testOperatorAnd", testOperatorAnd),
+        ("testOperatorOr", testOperatorOr),
+        ("testOperatorXor", testOperatorXor),
         ("testStore", testStore),
+        ("testSubAndFetch", testSubAndFetch),
+        ("testSubOperator", testSubOperator),
     ]
 }
 
@@ -1099,10 +1147,75 @@ extension AtomicUIntTests {
     ]
 }
 
+extension BitReferenceTests {
+    static let __allTests = [
+        ("testInt16InitByPointerAndRangeBit", testInt16InitByPointerAndRangeBit),
+        ("testInt8InitByPointerAndBit", testInt8InitByPointerAndBit),
+        ("testInt8Set", testInt8Set),
+        ("testSwapBitT", testSwapBitT),
+        ("testSwapT", testSwapT),
+        ("testSwapTU", testSwapTU),
+        ("testToggle", testToggle),
+        ("testUInt16InitByPointerAndRangeBit", testUInt16InitByPointerAndRangeBit),
+        ("testUInt8Get0", testUInt8Get0),
+        ("testUInt8Get1", testUInt8Get1),
+        ("testUInt8GetEven", testUInt8GetEven),
+        ("testUInt8GetOdd", testUInt8GetOdd),
+        ("testUInt8InitByPointerAndBit", testUInt8InitByPointerAndBit),
+        ("testUInt8Set", testUInt8Set),
+        ("testValueToggle", testValueToggle),
+    ]
+}
+
+extension BitSetTests {
+    static let __allTests = [
+        ("testBitWidth", testBitWidth),
+        ("testBitwiseAnd", testBitwiseAnd),
+        ("testBitwiseAndToLeft", testBitwiseAndToLeft),
+        ("testBitwiseOr", testBitwiseOr),
+        ("testBitwiseOrToLeft", testBitwiseOrToLeft),
+        ("testBitwiseXOr", testBitwiseXOr),
+        ("testBitwiseXOrToLeft", testBitwiseXOrToLeft),
+        ("testInit", testInit),
+        ("testInitByValue", testInitByValue),
+        ("testInitTruncatingIfNeeded", testInitTruncatingIfNeeded),
+        ("testIntegerValue", testIntegerValue),
+        ("testInverse", testInverse),
+        ("testIsAllOnes", testIsAllOnes),
+        ("testIsAllZeros", testIsAllZeros),
+        ("testIsAnyOnes", testIsAnyOnes),
+        ("testLeadingZeroBitCount", testLeadingZeroBitCount),
+        ("testNonzeroBitCount", testNonzeroBitCount),
+        ("testReset", testReset),
+        ("testSet", testSet),
+        ("testShiftLeft", testShiftLeft),
+        ("testShiftLeftCurrent", testShiftLeftCurrent),
+        ("testShiftRight", testShiftRight),
+        ("testShiftRightCurrent", testShiftRightCurrent),
+        ("testSubscriptWithBitReferenceReturns", testSubscriptWithBitReferenceReturns),
+        ("testSubscriptWithBitReturnsGet", testSubscriptWithBitReturnsGet),
+        ("testSubscriptWithBitReturnsSet", testSubscriptWithBitReturnsSet),
+        ("testTest", testTest),
+        ("testTrailingZeroBitCount", testTrailingZeroBitCount),
+    ]
+}
+
+extension ByteTests {
+    static let __allTests = [
+        ("testCustomDebugStringConvertible", testCustomDebugStringConvertible),
+        ("testCustomStringConvertible", testCustomStringConvertible),
+        ("testEquatable", testEquatable),
+        ("testLogicalNOT", testLogicalNOT),
+        ("testLosslessStringConvertible", testLosslessStringConvertible),
+        ("testToggle", testToggle),
+    ]
+}
+
 #if !os(macOS)
 public func __allTests() -> [XCTestCaseEntry] {
     return [
         testCase(AtomicBoolTests.__allTests),
+        testCase(AtomicBoxTests.__allTests),
         testCase(AtomicInt16Tests.__allTests),
         testCase(AtomicInt32Tests.__allTests),
         testCase(AtomicInt64Tests.__allTests),
@@ -1114,6 +1227,9 @@ public func __allTests() -> [XCTestCaseEntry] {
         testCase(AtomicUInt64Tests.__allTests),
         testCase(AtomicUInt8Tests.__allTests),
         testCase(AtomicUIntTests.__allTests),
+        testCase(BitReferenceTests.__allTests),
+        testCase(BitSetTests.__allTests),
+        testCase(ByteTests.__allTests),
     ]
 }
 #endif
