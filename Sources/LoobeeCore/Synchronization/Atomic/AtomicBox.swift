@@ -7,11 +7,8 @@
 
 /// A box that provides atomic access to an object, maintaining the correct retain counts.
 public final class AtomicBox<T> where T: AnyObject {
-
-    typealias Address = UInt
-
     @usableFromInline
-    internal var address: Address
+    internal var address: UInt
 
     @inlinable
     public init(object: T) {
@@ -28,7 +25,7 @@ public final class AtomicBox<T> where T: AnyObject {
     @inlinable
     @inline(__always)
     public static func isAlwaysLockFree() -> Bool {
-        return Address.isAlwaysLockFree()
+        return UInt.isAlwaysLockFree()
     }
 
     /// Atomically assign the object.
@@ -37,7 +34,7 @@ public final class AtomicBox<T> where T: AnyObject {
     /// - Parameter order:  Memory order constraints to enforce.
     @inlinable
     public func store(_ object: T, withOrder order: AtomicOrder) {
-        let newAddress = Address(bitPattern: Unmanaged<T>.passRetained(object).toOpaque())
+        let newAddress = UInt(bitPattern: Unmanaged<T>.passRetained(object).toOpaque())
         let oldAddress = self.address.atomicExchange(newValue: newAddress, withOrder: order)
 
         Unmanaged<T>.fromOpaque(UnsafeRawPointer(bitPattern: oldAddress)!).release()
@@ -88,7 +85,7 @@ public final class AtomicBox<T> where T: AnyObject {
     @inlinable
     public func exchange(newObject: T, withOrder order: AtomicOrder) -> T {
         let oldPointer = self.address.atomicExchange(
-            newValue: Address(bitPattern: Unmanaged<T>.passRetained(newObject).toOpaque()),
+            newValue: UInt(bitPattern: Unmanaged<T>.passRetained(newObject).toOpaque()),
             withOrder: order
         )
         return Unmanaged<T>.fromOpaque(UnsafeRawPointer(bitPattern: oldPointer)!).takeRetainedValue()
@@ -129,8 +126,8 @@ public final class AtomicBox<T> where T: AnyObject {
         let expectedPointer = Unmanaged<T>.passUnretained(expected)
         let desiredPointer = Unmanaged<T>.passUnretained(desired)
 
-        var expectedAddress = Address(bitPattern: expectedPointer.toOpaque())
-        let desiredAddress = Address(bitPattern: desiredPointer.toOpaque())
+        var expectedAddress = UInt(bitPattern: expectedPointer.toOpaque())
+        let desiredAddress = UInt(bitPattern: desiredPointer.toOpaque())
 
         if self.address.atomicCompareAndExchangeWeak(
             expected: &expectedAddress,
@@ -224,8 +221,8 @@ public final class AtomicBox<T> where T: AnyObject {
         let expectedPointer = Unmanaged<T>.passUnretained(expected)
         let desiredPointer = Unmanaged<T>.passUnretained(desired)
 
-        var expectedAddress = Address(bitPattern: expectedPointer.toOpaque())
-        let desiredAddress = Address(bitPattern: desiredPointer.toOpaque())
+        var expectedAddress = UInt(bitPattern: expectedPointer.toOpaque())
+        let desiredAddress = UInt(bitPattern: desiredPointer.toOpaque())
 
         if self.address.atomicCompareAndExchangeStrong(
             expected: &expectedAddress,
