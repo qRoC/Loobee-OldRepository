@@ -20,11 +20,11 @@ all: clean build test
 safe-release: clean build-safe-release test-safe-release
 release: clean build-release test-release
 
-.PHONY: build build-sanitize build-safe-release build-release
+.PHONY: build build-sanitize-address build-safe-release build-release
 build:
 	swift build $(call generatePassFlags,Xswiftc,$(SWIFTC_DEBUG_FLAGS)) $(call generatePassFlags,Xcc,$(CC_DEBUG_FLAGS)) $(call generatePassFlags,Xlinker,$(LINKER_DEBUG_FLAGS))
-build-sanitize:
-	swift build --sanitize $(call generatePassFlags,Xswiftc,$(SWIFTC_DEBUG_FLAGS)) $(call generatePassFlags,Xcc,$(CC_DEBUG_FLAGS)) $(call generatePassFlags,Xlinker,$(LINKER_DEBUG_FLAGS))
+build-sanitize-address:
+	swift build --sanitize=address $(call generatePassFlags,Xswiftc,$(SWIFTC_DEBUG_FLAGS)) $(call generatePassFlags,Xcc,$(CC_DEBUG_FLAGS)) $(call generatePassFlags,Xlinker,$(LINKER_DEBUG_FLAGS))
 build-safe-release:
 	swift build --configuration release --static-swift-stdlib $(call generatePassFlags,Xswiftc,$(SWIFTC_SAFE_RELEASE_FLAGS)) $(call generatePassFlags,Xcc,$(CC_RELEASE_FLAGS)) $(call generatePassFlags,Xlinker,$(LINKER_RELEASE_FLAGS))
 build-release:
