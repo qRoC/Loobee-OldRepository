@@ -15,7 +15,7 @@ matrix:
         - BUILD_LINK=https://swift.org/builds/swift-4.2-branch/xcode/swift-4.2-DEVELOPMENT-SNAPSHOT-2018-08-10-a/swift-4.2-DEVELOPMENT-SNAPSHOT-2018-08-10-a-osx.pkg
 
 before_install:
-  - sudo /bin/bash scripts/travis-clang.sh
+  - sudo /bin/bash scripts/travis-deps.sh
   - chmod u+x scripts/travis-swift.sh
   - . scripts/travis-swift.sh
 
