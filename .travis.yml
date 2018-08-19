@@ -7,12 +7,12 @@ matrix:
       language: generic
       sudo: required
       env:
-        - BUILD_LINK=https://swift.org/builds/development/ubuntu1404/swift-DEVELOPMENT-SNAPSHOT-2018-08-10-a/swift-DEVELOPMENT-SNAPSHOT-2018-08-10-a-ubuntu14.04.tar.gz
+        - BUILD_LINK=https://swift.org/builds/swift-4.2-convergence/ubuntu1404/swift-4.2-CONVERGENCE/swift-4.2-CONVERGENCE-ubuntu14.04.tar.gz
 
     - os: osx
       osx_image: xcode9.4
       env:
-        - BUILD_LINK=https://swift.org/builds/swift-4.2-branch/xcode/swift-4.2-DEVELOPMENT-SNAPSHOT-2018-08-10-a/swift-4.2-DEVELOPMENT-SNAPSHOT-2018-08-10-a-osx.pkg
+        - BUILD_LINK=https://swift.org/builds/swift-4.2-convergence/xcode/swift-4.2-CONVERGENCE/swift-4.2-CONVERGENCE-osx.pkg
 
 before_install:
   - sudo /bin/bash scripts/travis-deps.sh
