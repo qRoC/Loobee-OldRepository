@@ -189,14 +189,6 @@ class AtomicTests: XCTestCase {
             obj2.atomicFetchAndAdd(1)
         )
         XCTAssertEqual(obj1.load(), obj2.atomicLoad())
-
-        obj1 += 1
-        _ = obj2.atomicFetchAndAdd(1)
-        XCTAssertEqual(obj1.load(), obj2.atomicLoad())
-
-        obj1 += Atomic(1)
-        _ = obj2.atomicFetchAndAdd(1)
-        XCTAssertEqual(obj1.load(), obj2.atomicLoad())
     }
 
     func testFetchAndSub() {
@@ -216,6 +208,62 @@ class AtomicTests: XCTestCase {
             obj2.atomicFetchAndSub(1)
         )
         XCTAssertEqual(obj1.load(), obj2.atomicLoad())
+    }
+
+    func testAddAndFetch() {
+        let obj1 = Atomic(1)
+        var obj2 = 1
+
+        for order: AtomicOrder in [.relaxed, .consume, .acquire, .release, .acqRel, .seqCst] {
+            XCTAssertEqual(
+                obj1.addAndFetch(1, withOrder: order),
+                obj2.atomicAddAndFetch(1, withOrder: order)
+            )
+            XCTAssertEqual(obj1.load(), obj2.atomicLoad())
+        }
+
+        XCTAssertEqual(
+            obj1.addAndFetch(1),
+            obj2.atomicAddAndFetch(1)
+        )
+        XCTAssertEqual(obj1.load(), obj2.atomicLoad())
+    }
+
+    func testSubAndFetch() {
+        let obj1 = Atomic(1)
+        var obj2 = 1
+
+        for order: AtomicOrder in [.relaxed, .consume, .acquire, .release, .acqRel, .seqCst] {
+            XCTAssertEqual(
+                obj1.subAndFetch(1, withOrder: order),
+                obj2.atomicSubAndFetch(1, withOrder: order)
+            )
+            XCTAssertEqual(obj1.load(), obj2.atomicLoad())
+        }
+
+        XCTAssertEqual(
+            obj1.subAndFetch(1),
+            obj2.atomicSubAndFetch(1)
+        )
+        XCTAssertEqual(obj1.load(), obj2.atomicLoad())
+    }
+
+    func testAddOperator() {
+        let obj1 = Atomic(1)
+        var obj2 = 1
+
+        obj1 += 1
+        _ = obj2.atomicFetchAndAdd(1)
+        XCTAssertEqual(obj1.load(), obj2.atomicLoad())
+
+        obj1 += Atomic(1)
+        _ = obj2.atomicFetchAndAdd(1)
+        XCTAssertEqual(obj1.load(), obj2.atomicLoad())
+    }
+
+    func testSubOperator() {
+        let obj1 = Atomic(1)
+        var obj2 = 1
 
         obj1 -= 1
         _ = obj2.atomicFetchAndSub(1)
@@ -225,190 +273,157 @@ class AtomicTests: XCTestCase {
         _ = obj2.atomicFetchAndSub(1)
         XCTAssertEqual(obj1.load(), obj2.atomicLoad())
     }
+
+    func testFetchAndBitAnd() {
+        let obj1 = Atomic(11241)
+        var obj2 = 11241
+
+        for order: AtomicOrder in [.relaxed, .consume, .acquire, .release, .acqRel, .seqCst] {
+            XCTAssertEqual(
+                obj1.fetchAndBitAnd(1123, withOrder: order),
+                obj2.atomicFetchAndBitAnd(1123, withOrder: order)
+            )
+            XCTAssertEqual(obj1.load(), obj2.atomicLoad())
+        }
+
+        XCTAssertEqual(
+            obj1.fetchAndBitAnd(21551),
+            obj2.atomicFetchAndBitAnd(21551)
+        )
+        XCTAssertEqual(obj1.load(), obj2.atomicLoad())
+    }
+
+    func testFetchAndBitOr() {
+        let obj1 = Atomic(11241)
+        var obj2 = 11241
+
+        for order: AtomicOrder in [.relaxed, .consume, .acquire, .release, .acqRel, .seqCst] {
+            XCTAssertEqual(
+                obj1.fetchAndBitOr(1123, withOrder: order),
+                obj2.atomicFetchAndBitOr(1123, withOrder: order)
+            )
+            XCTAssertEqual(obj1.load(), obj2.atomicLoad())
+        }
+
+        XCTAssertEqual(
+            obj1.fetchAndBitOr(21551),
+            obj2.atomicFetchAndBitOr(21551)
+        )
+        XCTAssertEqual(obj1.load(), obj2.atomicLoad())
+    }
+
+    func testFetchAndBitXor() {
+        let obj1 = Atomic(11241)
+        var obj2 = 11241
+
+        for order: AtomicOrder in [.relaxed, .consume, .acquire, .release, .acqRel, .seqCst] {
+            XCTAssertEqual(
+                obj1.fetchAndBitXor(1123, withOrder: order),
+                obj2.atomicFetchAndBitXor(1123, withOrder: order)
+            )
+            XCTAssertEqual(obj1.load(), obj2.atomicLoad())
+        }
+
+        XCTAssertEqual(
+            obj1.fetchAndBitXor(21551),
+            obj2.atomicFetchAndBitXor(21551)
+        )
+        XCTAssertEqual(obj1.load(), obj2.atomicLoad())
+    }
+
+    func testBitAndAndFetch() {
+        let obj1 = Atomic(11241)
+        var obj2 = 11241
+
+        for order: AtomicOrder in [.relaxed, .consume, .acquire, .release, .acqRel, .seqCst] {
+            XCTAssertEqual(
+                obj1.bitAndAndFetch(1123, withOrder: order),
+                obj2.atomicBitAndAndFetch(1123, withOrder: order)
+            )
+            XCTAssertEqual(obj1.load(), obj2.atomicLoad())
+        }
+
+        XCTAssertEqual(
+            obj1.bitAndAndFetch(21551),
+            obj2.atomicBitAndAndFetch(21551)
+        )
+        XCTAssertEqual(obj1.load(), obj2.atomicLoad())
+    }
+
+    func testBitOrAndFetch() {
+        let obj1 = Atomic(11241)
+        var obj2 = 11241
+
+        for order: AtomicOrder in [.relaxed, .consume, .acquire, .release, .acqRel, .seqCst] {
+            XCTAssertEqual(
+                obj1.bitOrAndFetch(1123, withOrder: order),
+                obj2.atomicBitOrAndFetch(1123, withOrder: order)
+            )
+            XCTAssertEqual(obj1.load(), obj2.atomicLoad())
+        }
+
+        XCTAssertEqual(
+            obj1.bitOrAndFetch(21551),
+            obj2.atomicBitOrAndFetch(21551)
+        )
+        XCTAssertEqual(obj1.load(), obj2.atomicLoad())
+    }
+
+    func testBitXOrAndFetch() {
+        let obj1 = Atomic(11241)
+        var obj2 = 11241
+
+        for order: AtomicOrder in [.relaxed, .consume, .acquire, .release, .acqRel, .seqCst] {
+            XCTAssertEqual(
+                obj1.bitXorAndFetch(1123, withOrder: order),
+                obj2.atomicBitXorAndFetch(1123, withOrder: order)
+            )
+            XCTAssertEqual(obj1.load(), obj2.atomicLoad())
+        }
+
+        XCTAssertEqual(
+            obj1.bitXorAndFetch(21551),
+            obj2.atomicBitXorAndFetch(21551)
+        )
+        XCTAssertEqual(obj1.load(), obj2.atomicLoad())
+    }
+
+    func testOperatorAnd() {
+        let obj1 = Atomic(11241)
+        var obj2 = 11241
+
+        obj1 &= 21551
+        _ = obj2.atomicBitAndAndFetch(21551)
+        XCTAssertEqual(obj1.load(), obj2.atomicLoad())
+
+        obj1 &= Atomic(21551)
+        _ = obj2.atomicBitAndAndFetch(21551)
+        XCTAssertEqual(obj1.load(), obj2.atomicLoad())
+    }
+
+    func testOperatorOr() {
+        let obj1 = Atomic(11241)
+        var obj2 = 11241
+
+        obj1 |= 21551
+        _ = obj2.atomicBitOrAndFetch(21551)
+        XCTAssertEqual(obj1.load(), obj2.atomicLoad())
+
+        obj1 |= Atomic(21551)
+        _ = obj2.atomicBitOrAndFetch(21551)
+        XCTAssertEqual(obj1.load(), obj2.atomicLoad())
+    }
+
+    func testOperatorXor() {
+        let obj1 = Atomic(11241)
+        var obj2 = 11241
+
+        obj1 ^= 21551
+        _ = obj2.atomicBitXorAndFetch(21551)
+        XCTAssertEqual(obj1.load(), obj2.atomicLoad())
+
+        obj1 ^= Atomic(21551)
+        _ = obj2.atomicBitXorAndFetch(21551)
+        XCTAssertEqual(obj1.load(), obj2.atomicLoad())
+    }
 }
-
-
-//    /// Calls the `T.atomicSubAndFetch(_:withOrder:)` method.
-//    ///
-//    /// - SeeAlso: `AtomicArithmeticContract.atomicSubAndFetch(_:withOrder:)`
-//    @inlinable
-//    @inline(__always)
-//    public func subAndFetch(_ value: T, withOrder order: AtomicOrder) -> T {
-//        return self.value.atomicSubAndFetch(value, withOrder: order)
-//    }
-//
-//    /// Calls the `T.atomicSubAndFetch(_:)` method.
-//    ///
-//    /// - SeeAlso: `AtomicArithmeticContract.atomicSubAndFetch(_:)`
-//    @inlinable
-//    @inline(__always)
-//    public func subAndFetch(_ value: T) -> T {
-//        return self.value.atomicSubAndFetch(value)
-//    }
-//
-//    /// Alias of `subAndFetch(_:)` method.
-//    @inlinable
-//    @inline(__always)
-//    public static func -=(lhs: Atomic<T>, rhs: T) {
-//        _ = lhs.subAndFetch(rhs)
-//    }
-//
-//    /// Alias of `subAndFetch(_:)` method.
-//    @inlinable
-//    @inline(__always)
-//    public static func -=(lhs: Atomic<T>, rhs: Atomic<T>) {
-//        _ = lhs.subAndFetch(rhs.load())
-//    }
-//}
-//
-//public extension Atomic where T: AtomicBitwiseContract {
-//    /// Calls the `T.atomicFetchAndBitAnd(_:withOrder:)` method.
-//    ///
-//    /// - SeeAlso: `AtomicBitwiseContract.atomicFetchAndBitAnd(_:withOrder:)`
-//    @inlinable
-//    @inline(__always)
-//    public func fetchAndBitAnd(_ value: T, withOrder order: AtomicOrder) -> T {
-//        return self.value.atomicFetchAndBitAnd(value, withOrder: order)
-//    }
-//
-//    /// Calls the `T.atomicFetchAndBitAnd(_:)` method.
-//    ///
-//    /// - SeeAlso: `AtomicBitwiseContract.atomicFetchAndBitAnd(_:)`
-//    @inlinable
-//    @inline(__always)
-//    public func fetchAndBitAnd(_ value: T) -> T {
-//        return self.value.atomicFetchAndBitAnd(value)
-//    }
-//
-//    /// Calls the `T.atomicFetchAndBitOr(_:withOrder:)` method.
-//    ///
-//    /// - SeeAlso: `AtomicBitwiseContract.atomicFetchAndBitOr(_:withOrder:)`
-//    @inlinable
-//    @inline(__always)
-//    public func fetchAndBitOr(_ value: T, withOrder order: AtomicOrder) -> T {
-//        return self.value.atomicFetchAndBitOr(value, withOrder: order)
-//    }
-//
-//    /// Calls the `T.atomicFetchAndBitOr(_:)` method.
-//    ///
-//    /// - SeeAlso: `AtomicBitwiseContract.atomicFetchAndBitOr(_:)`
-//    @inlinable
-//    @inline(__always)
-//    public func fetchAndBitOr(_ value: T) -> T {
-//        return self.value.atomicFetchAndBitOr(value)
-//    }
-//
-//    /// Calls the `T.atomicFetchAndBitXor(_:withOrder:)` method.
-//    ///
-//    /// - SeeAlso: `AtomicBitwiseContract.atomicFetchAndBitXor(_:withOrder:)`
-//    @inlinable
-//    @inline(__always)
-//    public func fetchAndBitXor(_ value: T, withOrder order: AtomicOrder) -> T {
-//        return self.value.atomicFetchAndBitXor(value, withOrder: order)
-//    }
-//
-//    /// Calls the `T.atomicFetchAndBitXor(_:)` method.
-//    ///
-//    /// - SeeAlso: `AtomicBitwiseContract.atomicFetchAndBitXor(_:)`
-//    @inlinable
-//    @inline(__always)
-//    public func fetchAndBitXor(_ value: T) -> T {
-//        return self.value.atomicFetchAndBitXor(value)
-//    }
-//
-//    /// Calls the `T.atomicBitAndAndFetch(_:withOrder:)` method.
-//    ///
-//    /// - SeeAlso: `AtomicBitwiseContract.atomicBitAndAndFetch(_:withOrder:)`
-//    @inlinable
-//    @inline(__always)
-//    public func bitAndAndFetch(_ value: T, withOrder order: AtomicOrder) -> T {
-//        return self.value.atomicBitAndAndFetch(value, withOrder: order)
-//    }
-//
-//    /// Calls the `T.atomicBitAndAndFetch(_:)` method.
-//    ///
-//    /// - SeeAlso: `AtomicBitwiseContract.atomicBitAndAndFetch(_:)`
-//    @inlinable
-//    @inline(__always)
-//    public func bitAndAndFetch(_ value: T) -> T {
-//        return self.value.atomicBitAndAndFetch(value)
-//    }
-//
-//    /// Alias of `bitAndAndFetch(_:)` method.
-//    @inlinable
-//    @inline(__always)
-//    internal static func &=(lhs: Atomic<T>, rhs: T) {
-//        _ = lhs.bitAndAndFetch(rhs)
-//    }
-//
-//    /// Alias of `bitAndAndFetch(_:)` method.
-//    @inlinable
-//    @inline(__always)
-//    internal static func &=(lhs: Atomic<T>, rhs: Atomic<T>) {
-//        _ = lhs.bitAndAndFetch(rhs.load())
-//    }
-//
-//    /// Calls the `T.atomicBitOrAndFetch(_:withOrder:)` method.
-//    ///
-//    /// - SeeAlso: `AtomicBitwiseContract.atomicBitOrAndFetch(_:withOrder:)`
-//    @inlinable
-//    @inline(__always)
-//    public func bitOrAndFetch(_ value: T, withOrder order: AtomicOrder) -> T {
-//        return self.value.atomicBitOrAndFetch(value, withOrder: order)
-//    }
-//
-//    /// Calls the `T.atomicBitOrAndFetch(_:)` method.
-//    ///
-//    /// - SeeAlso: `AtomicBitwiseContract.atomicBitOrAndFetch(_:)`
-//    @inlinable
-//    @inline(__always)
-//    public func bitOrAndFetch(_ value: T) -> T {
-//        return self.value.atomicBitOrAndFetch(value)
-//    }
-//
-//    /// Alias of `bitOrAndFetch(_:)` method.
-//    @inlinable
-//    @inline(__always)
-//    internal static func |=(lhs: Atomic<T>, rhs: T) {
-//        _ = lhs.bitOrAndFetch(rhs)
-//    }
-//
-//    /// Alias of `bitOrAndFetch(_:)` method.
-//    @inlinable
-//    @inline(__always)
-//    internal static func |=(lhs: Atomic<T>, rhs: Atomic<T>) {
-//        _ = lhs.bitOrAndFetch(rhs.load())
-//    }
-//
-//    /// Calls the `T.atomicBitXorAndFetch(_:withOrder:)` method.
-//    ///
-//    /// - SeeAlso: `AtomicBitwiseContract.atomicBitXorAndFetch(_:withOrder:)`
-//    @inlinable
-//    @inline(__always)
-//    public func bitXorAndFetch(_ value: T, withOrder order: AtomicOrder) -> T {
-//        return self.value.atomicBitXorAndFetch(value, withOrder: order)
-//    }
-//
-//    /// Calls the `T.atomicBitXorAndFetch(_:)` method.
-//    ///
-//    /// - SeeAlso: `AtomicBitwiseContract.atomicBitXorAndFetch(_:)`
-//    @inlinable
-//    @inline(__always)
-//    public func bitXorAndFetch(_ value: T) -> T {
-//        return self.value.atomicBitXorAndFetch(value)
-//    }
-//
-//    /// Alias of `bitXorAndFetch(_:)` method.
-//    @inlinable
-//    @inline(__always)
-//    internal static func ^=(lhs: Atomic<T>, rhs: T) {
-//        _ = lhs.bitXorAndFetch(rhs)
-//    }
-//
-//    /// Alias of `bitXorAndFetch(_:)` method.
-//    @inlinable
-//    @inline(__always)
-//    internal static func ^=(lhs: Atomic<T>, rhs: Atomic<T>) {
-//        _ = lhs.bitXorAndFetch(rhs.load())
-//    }
-//}
