@@ -23,7 +23,7 @@
         <a class="header-link" href="index.html">
           LoobeeCore Docs
         </a>
-         (92% documented)
+         (90% documented)
       </p>
     
       <p class="header-col--secondary">
@@ -119,6 +119,33 @@
           <li class="nav-group-name">
             <a class="nav-group-name-link" href="Functions.html">Functions</a>
             <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Functions.html#/s:10LoobeeCore5fnv32_4hashs6UInt32VSS_AEtF">fnv32(_:hash:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Functions.html#/s:10LoobeeCore5fnv32_4hashs6UInt32VSayAA6BitSetVys5UInt8VGG_AEtF">fnv32(_:hash:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Functions.html#/s:10LoobeeCore5fnv32_4hashs6UInt32Vs22UnsafeRawBufferPointerV_AEtF">fnv32(_:hash:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Functions.html#/s:10LoobeeCore5fnv64_4hashs6UInt64VSS_AEtF">fnv64(_:hash:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Functions.html#/s:10LoobeeCore5fnv64_4hashs6UInt64VSayAA6BitSetVys5UInt8VGG_AEtF">fnv64(_:hash:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Functions.html#/s:10LoobeeCore5fnv64_4hashs6UInt64Vs22UnsafeRawBufferPointerV_AEtF">fnv64(_:hash:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Functions.html#/s:10LoobeeCore6fnva64_4hashs6UInt64VSS_AEtF">fnva64(_:hash:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Functions.html#/s:10LoobeeCore6fnva64_4hashs6UInt64VSayAA6BitSetVys5UInt8VGG_AEtF">fnva64(_:hash:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Functions.html#/s:10LoobeeCore6fnva64_4hashs6UInt64Vs22UnsafeRawBufferPointerV_AEtF">fnva64(_:hash:)</a>
+              </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Functions.html#/s:10LoobeeCore4swapyyAA12BitReferenceVyxGz_AA0D0Ozts17FixedWidthIntegerRzlF">swap(_:_:)</a>
               </li>
@@ -303,6 +330,282 @@
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@inlinable</span>
 <span class="kd">public</span> <span class="kd">func</span> <span class="n">swap</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">lhs</span><span class="p">:</span> <span class="k">inout</span> <span class="kt"><a href="Enums/Bit.html">Bit</a></span><span class="p">,</span> <span class="n">_</span> <span class="nv">rhs</span><span class="p">:</span> <span class="k">inout</span> <span class="kt"><a href="Structs/BitReference.html">BitReference</a></span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">)</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt">FixedWidthInteger</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10LoobeeCore5fnv32_4hashs6UInt32VSS_AEtF"></a>
+                    <a name="//apple_ref/swift/Function/fnv32(_:hash:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10LoobeeCore5fnv32_4hashs6UInt32VSS_AEtF">fnv32(_:hash:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Fowler/Noll/Vo hash</p>
+
+<ul>
+<li>Link <a href="http://www.isthe.com/chongo/tech/comp/fnv/">http://www.isthe.com/chongo/tech/comp/fnv/</a></li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">fnv32</span><span class="p">(</span><span class="n">_</span> <span class="nv">buffer</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">hash</span><span class="p">:</span> <span class="kt">UInt32</span> <span class="o">=</span> <span class="mi">2_166_136_261</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UInt32</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10LoobeeCore5fnv32_4hashs6UInt32VSayAA6BitSetVys5UInt8VGG_AEtF"></a>
+                    <a name="//apple_ref/swift/Function/fnv32(_:hash:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10LoobeeCore5fnv32_4hashs6UInt32VSayAA6BitSetVys5UInt8VGG_AEtF">fnv32(_:hash:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">fnv32</span><span class="p">(</span><span class="n">_</span> <span class="nv">buffer</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="Typealiases.html#/s:10LoobeeCore4Bytea">Byte</a></span><span class="p">],</span> <span class="nv">hash</span><span class="p">:</span> <span class="kt">UInt32</span> <span class="o">=</span> <span class="mi">2_166_136_261</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UInt32</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10LoobeeCore5fnv32_4hashs6UInt32Vs22UnsafeRawBufferPointerV_AEtF"></a>
+                    <a name="//apple_ref/swift/Function/fnv32(_:hash:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10LoobeeCore5fnv32_4hashs6UInt32Vs22UnsafeRawBufferPointerV_AEtF">fnv32(_:hash:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">fnv32</span><span class="p">(</span><span class="n">_</span> <span class="nv">buffer</span><span class="p">:</span> <span class="kt">UnsafeRawBufferPointer</span><span class="p">,</span> <span class="nv">hash</span><span class="p">:</span> <span class="kt">UInt32</span> <span class="o">=</span> <span class="mi">2_166_136_261</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UInt32</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10LoobeeCore5fnv64_4hashs6UInt64VSS_AEtF"></a>
+                    <a name="//apple_ref/swift/Function/fnv64(_:hash:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10LoobeeCore5fnv64_4hashs6UInt64VSS_AEtF">fnv64(_:hash:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Fowler/Noll/Vo hash</p>
+
+<ul>
+<li>Link <a href="http://www.isthe.com/chongo/tech/comp/fnv/">http://www.isthe.com/chongo/tech/comp/fnv/</a></li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">fnv64</span><span class="p">(</span><span class="n">_</span> <span class="nv">buffer</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">hash</span><span class="p">:</span> <span class="kt">UInt64</span> <span class="o">=</span> <span class="mi">14_695_981_039_346_656_037</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UInt64</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10LoobeeCore5fnv64_4hashs6UInt64VSayAA6BitSetVys5UInt8VGG_AEtF"></a>
+                    <a name="//apple_ref/swift/Function/fnv64(_:hash:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10LoobeeCore5fnv64_4hashs6UInt64VSayAA6BitSetVys5UInt8VGG_AEtF">fnv64(_:hash:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">fnv64</span><span class="p">(</span><span class="n">_</span> <span class="nv">buffer</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="Typealiases.html#/s:10LoobeeCore4Bytea">Byte</a></span><span class="p">],</span> <span class="nv">hash</span><span class="p">:</span> <span class="kt">UInt64</span> <span class="o">=</span> <span class="mi">14_695_981_039_346_656_037</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UInt64</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10LoobeeCore5fnv64_4hashs6UInt64Vs22UnsafeRawBufferPointerV_AEtF"></a>
+                    <a name="//apple_ref/swift/Function/fnv64(_:hash:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10LoobeeCore5fnv64_4hashs6UInt64Vs22UnsafeRawBufferPointerV_AEtF">fnv64(_:hash:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">fnv64</span><span class="p">(</span><span class="n">_</span> <span class="nv">buffer</span><span class="p">:</span> <span class="kt">UnsafeRawBufferPointer</span><span class="p">,</span> <span class="nv">hash</span><span class="p">:</span> <span class="kt">UInt64</span> <span class="o">=</span> <span class="mi">14_695_981_039_346_656_037</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UInt64</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10LoobeeCore6fnva64_4hashs6UInt64VSS_AEtF"></a>
+                    <a name="//apple_ref/swift/Function/fnva64(_:hash:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10LoobeeCore6fnva64_4hashs6UInt64VSS_AEtF">fnva64(_:hash:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Fowler/Noll/Vo hash</p>
+
+<ul>
+<li>Link <a href="http://www.isthe.com/chongo/tech/comp/fnv/">http://www.isthe.com/chongo/tech/comp/fnv/</a></li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">fnva64</span><span class="p">(</span><span class="n">_</span> <span class="nv">buffer</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">hash</span><span class="p">:</span> <span class="kt">UInt64</span> <span class="o">=</span> <span class="mi">14_695_981_039_346_656_037</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UInt64</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10LoobeeCore6fnva64_4hashs6UInt64VSayAA6BitSetVys5UInt8VGG_AEtF"></a>
+                    <a name="//apple_ref/swift/Function/fnva64(_:hash:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10LoobeeCore6fnva64_4hashs6UInt64VSayAA6BitSetVys5UInt8VGG_AEtF">fnva64(_:hash:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">fnva64</span><span class="p">(</span><span class="n">_</span> <span class="nv">buffer</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="Typealiases.html#/s:10LoobeeCore4Bytea">Byte</a></span><span class="p">],</span> <span class="nv">hash</span><span class="p">:</span> <span class="kt">UInt64</span> <span class="o">=</span> <span class="mi">14_695_981_039_346_656_037</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UInt64</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10LoobeeCore6fnva64_4hashs6UInt64Vs22UnsafeRawBufferPointerV_AEtF"></a>
+                    <a name="//apple_ref/swift/Function/fnva64(_:hash:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10LoobeeCore6fnva64_4hashs6UInt64Vs22UnsafeRawBufferPointerV_AEtF">fnva64(_:hash:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">fnva64</span><span class="p">(</span><span class="n">_</span> <span class="nv">buffer</span><span class="p">:</span> <span class="kt">UnsafeRawBufferPointer</span><span class="p">,</span> <span class="nv">hash</span><span class="p">:</span> <span class="kt">UInt64</span> <span class="o">=</span> <span class="mi">14_695_981_039_346_656_037</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UInt64</span></code></pre>
 
                         </div>
                       </div>

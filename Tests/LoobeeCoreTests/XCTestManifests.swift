@@ -1211,6 +1211,48 @@ extension ByteTests {
     ]
 }
 
+extension Fnv32Tests {
+    static let __allTests = [
+        ("testBigString", testBigString),
+        ("testByteBuffer", testByteBuffer),
+        ("testDataPointer", testDataPointer),
+        ("testEmptyByteBuffer", testEmptyByteBuffer),
+        ("testEmptyDataPointer", testEmptyDataPointer),
+        ("testEmptyString", testEmptyString),
+        ("testHello", testHello),
+        ("testSampleByteBuffer", testSampleByteBuffer),
+        ("testSampleDataPointer", testSampleDataPointer),
+    ]
+}
+
+extension Fnv64Tests {
+    static let __allTests = [
+        ("testBigString", testBigString),
+        ("testByteBuffer", testByteBuffer),
+        ("testDataPointer", testDataPointer),
+        ("testEmptyByteBuffer", testEmptyByteBuffer),
+        ("testEmptyDataPointer", testEmptyDataPointer),
+        ("testEmptyString", testEmptyString),
+        ("testHello", testHello),
+        ("testSampleByteBuffer", testSampleByteBuffer),
+        ("testSampleDataPointer", testSampleDataPointer),
+    ]
+}
+
+extension Fnva64Tests {
+    static let __allTests = [
+        ("testBigString", testBigString),
+        ("testByteBuffer", testByteBuffer),
+        ("testDataPointer", testDataPointer),
+        ("testEmptyByteBuffer", testEmptyByteBuffer),
+        ("testEmptyDataPointer", testEmptyDataPointer),
+        ("testEmptyString", testEmptyString),
+        ("testHello", testHello),
+        ("testSampleByteBuffer", testSampleByteBuffer),
+        ("testSampleDataPointer", testSampleDataPointer),
+    ]
+}
+
 #if !os(macOS)
 public func __allTests() -> [XCTestCaseEntry] {
     return [
@@ -1230,6 +1272,9 @@ public func __allTests() -> [XCTestCaseEntry] {
         testCase(BitReferenceTests.__allTests),
         testCase(BitSetTests.__allTests),
         testCase(ByteTests.__allTests),
+        testCase(Fnv32Tests.__allTests),
+        testCase(Fnv64Tests.__allTests),
+        testCase(Fnva64Tests.__allTests),
     ]
 }
 #endif

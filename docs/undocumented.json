@@ -99,6 +99,48 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/qroc/Development/MyProjects/Loobee/Sources/LoobeeCore/Hash/fnv32.swift",
+      "line": 24,
+      "symbol": "fnv32(_:hash:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qroc/Development/MyProjects/Loobee/Sources/LoobeeCore/Hash/fnv32.swift",
+      "line": 37,
+      "symbol": "fnv32(_:hash:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qroc/Development/MyProjects/Loobee/Sources/LoobeeCore/Hash/fnv64.swift",
+      "line": 25,
+      "symbol": "fnv64(_:hash:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qroc/Development/MyProjects/Loobee/Sources/LoobeeCore/Hash/fnv64.swift",
+      "line": 39,
+      "symbol": "fnv64(_:hash:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qroc/Development/MyProjects/Loobee/Sources/LoobeeCore/Hash/fnva64.swift",
+      "line": 25,
+      "symbol": "fnva64(_:hash:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qroc/Development/MyProjects/Loobee/Sources/LoobeeCore/Hash/fnva64.swift",
+      "line": 39,
+      "symbol": "fnva64(_:hash:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/qroc/Development/MyProjects/Loobee/Sources/LoobeeCore/Logger/LogLevel.swift",
       "line": null,
       "symbol": "LogLevel",
