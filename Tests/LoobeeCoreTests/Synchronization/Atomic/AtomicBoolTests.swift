@@ -8,7 +8,7 @@
 import LoobeeCore
 import XCTest
 
-class AtomicBoolTests: XCTestCase {
+internal class AtomicBoolTests: XCTestCase {
     let atomicContractTest = AtomicContractTests(firstVariant: true, secondVariant: false)
 
     func testIsAlwaysLockFree() {

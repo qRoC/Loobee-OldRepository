@@ -55,7 +55,7 @@ public protocol AtomicBitwiseContract {
     mutating func atomicBitXorAndFetch(_ value: Self, withOrder order: AtomicOrder) -> Self
 }
 
-public extension AtomicBitwiseContract {
+extension AtomicBitwiseContract {
     /// Atomically performs bitwise AND and return the value held previously.
     /// The operation with `.seqCst` memory order.
     ///

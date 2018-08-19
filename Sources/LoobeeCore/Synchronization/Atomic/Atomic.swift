@@ -183,7 +183,7 @@ public final class Atomic<T: AtomicContract> {
     }
 }
 
-public extension Atomic where T: AtomicArithmeticContract {
+extension Atomic where T: AtomicArithmeticContract {
     /// Calls the `T.atomicFetchAndAdd(_:withOrder:)` method.
     ///
     /// - SeeAlso: `AtomicArithmeticContract.atomicFetchAndAdd(_:withOrder:)`
@@ -241,14 +241,14 @@ public extension Atomic where T: AtomicArithmeticContract {
     /// Alias of `addAndFetch(_:)` method.
     @inlinable
     @inline(__always)
-    public static func +=(lhs: Atomic<T>, rhs: T) {
+    public static func += (lhs: Atomic<T>, rhs: T) {
         _ = lhs.addAndFetch(rhs)
     }
 
     /// Alias of `addAndFetch(_:)` method.
     @inlinable
     @inline(__always)
-    public static func +=(lhs: Atomic<T>, rhs: Atomic<T>) {
+    public static func += (lhs: Atomic<T>, rhs: Atomic<T>) {
         _ = lhs.addAndFetch(rhs.load())
     }
 
@@ -273,19 +273,19 @@ public extension Atomic where T: AtomicArithmeticContract {
     /// Alias of `subAndFetch(_:)` method.
     @inlinable
     @inline(__always)
-    public static func -=(lhs: Atomic<T>, rhs: T) {
+    public static func -= (lhs: Atomic<T>, rhs: T) {
         _ = lhs.subAndFetch(rhs)
     }
 
     /// Alias of `subAndFetch(_:)` method.
     @inlinable
     @inline(__always)
-    public static func -=(lhs: Atomic<T>, rhs: Atomic<T>) {
+    public static func -= (lhs: Atomic<T>, rhs: Atomic<T>) {
         _ = lhs.subAndFetch(rhs.load())
     }
 }
 
-public extension Atomic where T: AtomicBitwiseContract {
+extension Atomic where T: AtomicBitwiseContract {
     /// Calls the `T.atomicFetchAndBitAnd(_:withOrder:)` method.
     ///
     /// - SeeAlso: `AtomicBitwiseContract.atomicFetchAndBitAnd(_:withOrder:)`
@@ -361,14 +361,14 @@ public extension Atomic where T: AtomicBitwiseContract {
     /// Alias of `bitAndAndFetch(_:)` method.
     @inlinable
     @inline(__always)
-    public static func &=(lhs: Atomic<T>, rhs: T) {
+    public static func &= (lhs: Atomic<T>, rhs: T) {
         _ = lhs.bitAndAndFetch(rhs)
     }
 
     /// Alias of `bitAndAndFetch(_:)` method.
     @inlinable
     @inline(__always)
-    public static func &=(lhs: Atomic<T>, rhs: Atomic<T>) {
+    public static func &= (lhs: Atomic<T>, rhs: Atomic<T>) {
         _ = lhs.bitAndAndFetch(rhs.load())
     }
 
@@ -393,14 +393,14 @@ public extension Atomic where T: AtomicBitwiseContract {
     /// Alias of `bitOrAndFetch(_:)` method.
     @inlinable
     @inline(__always)
-    public static func |=(lhs: Atomic<T>, rhs: T) {
+    public static func |= (lhs: Atomic<T>, rhs: T) {
         _ = lhs.bitOrAndFetch(rhs)
     }
 
     /// Alias of `bitOrAndFetch(_:)` method.
     @inlinable
     @inline(__always)
-    public static func |=(lhs: Atomic<T>, rhs: Atomic<T>) {
+    public static func |= (lhs: Atomic<T>, rhs: Atomic<T>) {
         _ = lhs.bitOrAndFetch(rhs.load())
     }
 
@@ -425,14 +425,14 @@ public extension Atomic where T: AtomicBitwiseContract {
     /// Alias of `bitXorAndFetch(_:)` method.
     @inlinable
     @inline(__always)
-    public static func ^=(lhs: Atomic<T>, rhs: T) {
+    public static func ^= (lhs: Atomic<T>, rhs: T) {
         _ = lhs.bitXorAndFetch(rhs)
     }
 
     /// Alias of `bitXorAndFetch(_:)` method.
     @inlinable
     @inline(__always)
-    public static func ^=(lhs: Atomic<T>, rhs: Atomic<T>) {
+    public static func ^= (lhs: Atomic<T>, rhs: Atomic<T>) {
         _ = lhs.bitXorAndFetch(rhs.load())
     }
 }

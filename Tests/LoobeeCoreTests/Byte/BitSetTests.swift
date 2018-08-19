@@ -8,7 +8,7 @@
 import LoobeeCore
 import XCTest
 
-class BitSetTests: XCTestCase {
+internal class BitSetTests: XCTestCase {
     func testBitWidth() {
         XCTAssertEqual(BitSet<UInt8>.bitWidth, UInt8.bitWidth)
         XCTAssertEqual(BitSet<Int8>.bitWidth, Int8.bitWidth)

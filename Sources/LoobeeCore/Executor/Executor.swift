@@ -26,12 +26,12 @@ public protocol Executor: class {
     func add(_: () -> Void, withPriority: ExecutorPriority)
 }
 
-public extension Executor {
+extension Executor {
     internal var numPriorities: UInt8 {
         return 1
     }
 }
 
-public extension Executor {
+extension Executor {
 
 }

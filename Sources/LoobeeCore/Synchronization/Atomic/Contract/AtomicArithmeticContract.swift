@@ -39,7 +39,7 @@ public protocol AtomicArithmeticContract {
     mutating func atomicSubAndFetch(_ value: Self, withOrder order: AtomicOrder) -> Self
 }
 
-public extension AtomicArithmeticContract {
+extension AtomicArithmeticContract {
     /// Atomically add the integral value and return the value held previously.
     /// The operation with `.seqCst` memory order.
     ///

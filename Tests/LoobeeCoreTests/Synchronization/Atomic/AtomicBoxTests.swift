@@ -8,14 +8,14 @@
 import LoobeeCore
 import XCTest
 
-class AtomicBoxTests: XCTestCase {
+internal class AtomicBoxTests: XCTestCase {
     class Foo {}
 
     func testIsAlwaysLockFree() {
         _ = AtomicBox<Foo>.isAlwaysLockFree()
     }
 
-    fileprivate func testLoad(withOrder order: AtomicOrder?) {
+    private func testLoad(withOrder order: AtomicOrder?) {
         func callTestFn(_ object: AtomicBox<Foo>) -> Foo {
             if let order = order {
                 return object.load(withOrder: order)
@@ -48,7 +48,7 @@ class AtomicBoxTests: XCTestCase {
         testLoad(withOrder: nil)
     }
 
-    fileprivate func testStore(withOrder order: AtomicOrder?) {
+    private func testStore(withOrder order: AtomicOrder?) {
         func callTestFn(_ object: AtomicBox<Foo>, _ newObject: Foo) {
             if let order = order {
                 return object.store(newObject, withOrder: order)
@@ -80,7 +80,7 @@ class AtomicBoxTests: XCTestCase {
         self.testStore(withOrder: nil)
     }
 
-    fileprivate func testExchange(withOrder order: AtomicOrder?) {
+    private func testExchange(withOrder order: AtomicOrder?) {
         func callTestFn(_ object: AtomicBox<Foo>, newObject: Foo) -> Foo {
             if let order = order {
                 return object.exchange(newObject: newObject, withOrder: order)
@@ -124,12 +124,12 @@ class AtomicBoxTests: XCTestCase {
         self.testExchange(withOrder: nil)
     }
 
-    fileprivate enum CompareAndExchange {
+    private enum CompareAndExchange {
         case weak
         case strong
     }
 
-    fileprivate func testCompareAndExchange(mode: CompareAndExchange, withOrder order: AtomicOrder?) {
+    private func testCompareAndExchange(mode: CompareAndExchange, withOrder order: AtomicOrder?) {
         func callTestFn(_ object: AtomicBox<Foo>, expected: inout Foo, desired: Foo) -> Bool {
             switch mode {
             case .weak:

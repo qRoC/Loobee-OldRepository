@@ -8,7 +8,7 @@
 import LoobeeCore
 import XCTest
 
-class AtomicArithmeticContractTests<T: AtomicContract & AtomicArithmeticContract & FixedWidthInteger> {
+internal class AtomicArithmeticContractTests<T: AtomicContract & AtomicArithmeticContract & FixedWidthInteger> {
     let firstVariant: T
     let secondVariant: T
 
@@ -17,7 +17,7 @@ class AtomicArithmeticContractTests<T: AtomicContract & AtomicArithmeticContract
         self.secondVariant = secondVariant
     }
 
-    fileprivate func testFetchAndAdd(withOrder order: AtomicOrder?) {
+    private func testFetchAndAdd(withOrder order: AtomicOrder?) {
         func callTestFn(value: inout T, valueToAdd: T) -> T {
             if let order = order {
                 return value.atomicFetchAndAdd(valueToAdd, withOrder: order)
@@ -63,7 +63,7 @@ class AtomicArithmeticContractTests<T: AtomicContract & AtomicArithmeticContract
         self.testFetchAndAdd(withOrder: nil)
     }
 
-    fileprivate func testFetchAndSub(withOrder order: AtomicOrder?) {
+    private func testFetchAndSub(withOrder order: AtomicOrder?) {
         func callTestFn(value: inout T, valueToSub: T) -> T {
             if let order = order {
                 return value.atomicFetchAndSub(valueToSub, withOrder: order)
@@ -109,7 +109,7 @@ class AtomicArithmeticContractTests<T: AtomicContract & AtomicArithmeticContract
         self.testFetchAndSub(withOrder: nil)
     }
 
-    fileprivate func testAddAndFetch(withOrder order: AtomicOrder?) {
+    private func testAddAndFetch(withOrder order: AtomicOrder?) {
         func callTestFn(value: inout T, valueToAdd: T) -> T {
             if let order = order {
                 return value.atomicAddAndFetch(valueToAdd, withOrder: order)
@@ -119,11 +119,17 @@ class AtomicArithmeticContractTests<T: AtomicContract & AtomicArithmeticContract
         }
 
         var value = self.firstVariant
-        XCTAssertEqual(callTestFn(value: &value, valueToAdd: self.secondVariant), self.firstVariant &+ self.secondVariant)
+        XCTAssertEqual(
+            callTestFn(value: &value, valueToAdd: self.secondVariant),
+            self.firstVariant &+ self.secondVariant
+        )
         XCTAssertEqual(value.atomicLoad(), self.firstVariant &+ self.secondVariant)
 
         var value2 = self.secondVariant
-        XCTAssertEqual(callTestFn(value: &value2, valueToAdd: self.firstVariant), self.secondVariant &+ self.firstVariant)
+        XCTAssertEqual(
+            callTestFn(value: &value2, valueToAdd: self.firstVariant),
+            self.secondVariant &+ self.firstVariant
+        )
         XCTAssertEqual(value2.atomicLoad(), self.secondVariant &+ self.firstVariant)
     }
 
@@ -155,7 +161,7 @@ class AtomicArithmeticContractTests<T: AtomicContract & AtomicArithmeticContract
         self.testAddAndFetch(withOrder: nil)
     }
 
-    fileprivate func testSubAndFetch(withOrder order: AtomicOrder?) {
+    private func testSubAndFetch(withOrder order: AtomicOrder?) {
         func callTestFn(value: inout T, valueToSub: T) -> T {
             if let order = order {
                 return value.atomicSubAndFetch(valueToSub, withOrder: order)
@@ -165,11 +171,17 @@ class AtomicArithmeticContractTests<T: AtomicContract & AtomicArithmeticContract
         }
 
         var value = self.firstVariant
-        XCTAssertEqual(callTestFn(value: &value, valueToSub: self.secondVariant), self.firstVariant &- self.secondVariant)
+        XCTAssertEqual(
+            callTestFn(value: &value, valueToSub: self.secondVariant),
+            self.firstVariant &- self.secondVariant
+        )
         XCTAssertEqual(value.atomicLoad(), self.firstVariant &- self.secondVariant)
 
         var value2 = self.secondVariant
-        XCTAssertEqual(callTestFn(value: &value2, valueToSub: self.firstVariant), self.secondVariant &- self.firstVariant)
+        XCTAssertEqual(
+            callTestFn(value: &value2, valueToSub: self.firstVariant),
+            self.secondVariant &- self.firstVariant
+        )
         XCTAssertEqual(value2.atomicLoad(), self.secondVariant &- self.firstVariant)
     }
 

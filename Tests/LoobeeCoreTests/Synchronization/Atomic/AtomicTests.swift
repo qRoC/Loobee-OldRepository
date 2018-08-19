@@ -8,7 +8,7 @@
 import LoobeeCore
 import XCTest
 
-class AtomicTests: XCTestCase {
+internal class AtomicTests: XCTestCase {
     func testIsAlwaysLockFree() {
         XCTAssertEqual(Atomic<Int>.isAlwaysLockFree(), Int.isAlwaysLockFree())
     }
@@ -56,49 +56,58 @@ class AtomicTests: XCTestCase {
         XCTAssertEqual(obj1.load(), obj2.atomicLoad())
     }
 
+    private func compareAndExchangeWeakSuccessFailure() {
+        let obj1 = Atomic(1)
+        var obj2 = 1
+
+        var expected1 = 0
+        var expected2 = 0
+        for order: AtomicOrder in [.relaxed, .consume, .acquire, .release, .acqRel, .seqCst] {
+            let result1 = obj1.compareAndExchangeWeak(
+                expected: &expected1,
+                desired: 1,
+                successOrder: order,
+                failureOrder: .relaxed
+            )
+            let result2 = obj2.atomicCompareAndExchangeWeak(
+                expected: &expected2,
+                desired: 1,
+                successOrder: order,
+                failureOrder: .relaxed
+            )
+            XCTAssertEqual(result1, result2)
+            XCTAssertEqual(obj1.load(), obj2.atomicLoad())
+        }
+    }
+
+    private func compareAndExchangeWeakOrder() {
+        let obj1 = Atomic(1)
+        var obj2 = 1
+
+        var expected1 = 0
+        var expected2 = 0
+        for order: AtomicOrder in [.relaxed, .consume, .acquire, .release, .acqRel, .seqCst] {
+            let result1 = obj1.compareAndExchangeWeak(
+                expected: &expected1,
+                desired: 1,
+                withOrder: order
+            )
+            let result2 = obj2.atomicCompareAndExchangeWeak(
+                expected: &expected2,
+                desired: 1,
+                withOrder: order
+            )
+            XCTAssertEqual(result1, result2)
+            XCTAssertEqual(obj1.load(), obj2.atomicLoad())
+        }
+    }
+
     func testCompareAndExchangeWeak() {
         let obj1 = Atomic(1)
         var obj2 = 1
 
-        do {
-            var expected1 = 0
-            var expected2 = 0
-            for order: AtomicOrder in [.relaxed, .consume, .acquire, .release, .acqRel, .seqCst] {
-                let result1 = obj1.compareAndExchangeWeak(
-                    expected: &expected1,
-                    desired: 1,
-                    successOrder: order,
-                    failureOrder: .relaxed
-                )
-                let result2 = obj2.atomicCompareAndExchangeWeak(
-                    expected: &expected2,
-                    desired: 1,
-                    successOrder: order,
-                    failureOrder: .relaxed
-                )
-                XCTAssertEqual(result1, result2)
-                XCTAssertEqual(obj1.load(), obj2.atomicLoad())
-            }
-        }
-
-        do {
-            var expected1 = 0
-            var expected2 = 0
-            for order: AtomicOrder in [.relaxed, .consume, .acquire, .release, .acqRel, .seqCst] {
-                let result1 = obj1.compareAndExchangeWeak(
-                    expected: &expected1,
-                    desired: 1,
-                    withOrder: order
-                )
-                let result2 = obj2.atomicCompareAndExchangeWeak(
-                    expected: &expected2,
-                    desired: 1,
-                    withOrder: order
-                )
-                XCTAssertEqual(result1, result2)
-                XCTAssertEqual(obj1.load(), obj2.atomicLoad())
-            }
-        }
+        self.compareAndExchangeWeakSuccessFailure()
+        self.compareAndExchangeWeakOrder()
 
         var expected1 = 0
         var expected2 = 0
@@ -114,49 +123,58 @@ class AtomicTests: XCTestCase {
         XCTAssertEqual(obj1.load(), obj2.atomicLoad())
     }
 
+    private func compareAndExchangeStrongSuccessFailure() {
+        let obj1 = Atomic(1)
+        var obj2 = 1
+
+        var expected1 = 0
+        var expected2 = 0
+        for order: AtomicOrder in [.relaxed, .consume, .acquire, .release, .acqRel, .seqCst] {
+            let result1 = obj1.compareAndExchangeStrong(
+                expected: &expected1,
+                desired: 1,
+                successOrder: order,
+                failureOrder: .relaxed
+            )
+            let result2 = obj2.atomicCompareAndExchangeStrong(
+                expected: &expected2,
+                desired: 1,
+                successOrder: order,
+                failureOrder: .relaxed
+            )
+            XCTAssertEqual(result1, result2)
+            XCTAssertEqual(obj1.load(), obj2.atomicLoad())
+        }
+    }
+
+    private func compareAndExchangeStrongOrder() {
+        let obj1 = Atomic(1)
+        var obj2 = 1
+
+        var expected1 = 0
+        var expected2 = 0
+        for order: AtomicOrder in [.relaxed, .consume, .acquire, .release, .acqRel, .seqCst] {
+            let result1 = obj1.compareAndExchangeStrong(
+                expected: &expected1,
+                desired: 1,
+                withOrder: order
+            )
+            let result2 = obj2.atomicCompareAndExchangeStrong(
+                expected: &expected2,
+                desired: 1,
+                withOrder: order
+            )
+            XCTAssertEqual(result1, result2)
+            XCTAssertEqual(obj1.load(), obj2.atomicLoad())
+        }
+    }
+
     func testCompareAndExchangeStrong() {
         let obj1 = Atomic(1)
         var obj2 = 1
 
-        do {
-            var expected1 = 0
-            var expected2 = 0
-            for order: AtomicOrder in [.relaxed, .consume, .acquire, .release, .acqRel, .seqCst] {
-                let result1 = obj1.compareAndExchangeStrong(
-                    expected: &expected1,
-                    desired: 1,
-                    successOrder: order,
-                    failureOrder: .relaxed
-                )
-                let result2 = obj2.atomicCompareAndExchangeStrong(
-                    expected: &expected2,
-                    desired: 1,
-                    successOrder: order,
-                    failureOrder: .relaxed
-                )
-                XCTAssertEqual(result1, result2)
-                XCTAssertEqual(obj1.load(), obj2.atomicLoad())
-            }
-        }
-
-        do {
-            var expected1 = 0
-            var expected2 = 0
-            for order: AtomicOrder in [.relaxed, .consume, .acquire, .release, .acqRel, .seqCst] {
-                let result1 = obj1.compareAndExchangeStrong(
-                    expected: &expected1,
-                    desired: 1,
-                    withOrder: order
-                )
-                let result2 = obj2.atomicCompareAndExchangeStrong(
-                    expected: &expected2,
-                    desired: 1,
-                    withOrder: order
-                )
-                XCTAssertEqual(result1, result2)
-                XCTAssertEqual(obj1.load(), obj2.atomicLoad())
-            }
-        }
+        self.compareAndExchangeStrongSuccessFailure()
+        self.compareAndExchangeStrongOrder()
 
         var expected1 = 0
         var expected2 = 0

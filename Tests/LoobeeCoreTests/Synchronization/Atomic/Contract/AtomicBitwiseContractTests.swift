@@ -8,7 +8,7 @@
 import LoobeeCore
 import XCTest
 
-class AtomicBitwiseContractTests<T: AtomicContract & AtomicBitwiseContract & FixedWidthInteger> {
+internal class AtomicBitwiseContractTests<T: AtomicContract & AtomicBitwiseContract & FixedWidthInteger> {
     let firstVariant: T
     let secondVariant: T
 
@@ -17,7 +17,7 @@ class AtomicBitwiseContractTests<T: AtomicContract & AtomicBitwiseContract & Fix
         self.secondVariant = secondVariant
     }
 
-    fileprivate func testFetchAndBitAnd(withOrder order: AtomicOrder?) {
+    private func testFetchAndBitAnd(withOrder order: AtomicOrder?) {
         func callTestFn(value: inout T, applyValue: T) -> T {
             if let order = order {
                 return value.atomicFetchAndBitAnd(applyValue, withOrder: order)
@@ -60,7 +60,7 @@ class AtomicBitwiseContractTests<T: AtomicContract & AtomicBitwiseContract & Fix
         self.testFetchAndBitAnd(withOrder: nil)
     }
 
-    fileprivate func testFetchAndBitOr(withOrder order: AtomicOrder?) {
+    private func testFetchAndBitOr(withOrder order: AtomicOrder?) {
         func callTestFn(value: inout T, applyValue: T) -> T {
             if let order = order {
                 return value.atomicFetchAndBitOr(applyValue, withOrder: order)
@@ -103,7 +103,7 @@ class AtomicBitwiseContractTests<T: AtomicContract & AtomicBitwiseContract & Fix
         self.testFetchAndBitOr(withOrder: nil)
     }
 
-    fileprivate func testFetchAndBitXor(withOrder order: AtomicOrder?) {
+    private func testFetchAndBitXor(withOrder order: AtomicOrder?) {
         func callTestFn(value: inout T, applyValue: T) -> T {
             if let order = order {
                 return value.atomicFetchAndBitXor(applyValue, withOrder: order)
@@ -146,7 +146,7 @@ class AtomicBitwiseContractTests<T: AtomicContract & AtomicBitwiseContract & Fix
         self.testFetchAndBitXor(withOrder: nil)
     }
 
-    fileprivate func testBitAndAndFetch(withOrder order: AtomicOrder?) {
+    private func testBitAndAndFetch(withOrder order: AtomicOrder?) {
         func callTestFn(value: inout T, applyValue: T) -> T {
             if let order = order {
                 return value.atomicBitAndAndFetch(applyValue, withOrder: order)
@@ -190,7 +190,7 @@ class AtomicBitwiseContractTests<T: AtomicContract & AtomicBitwiseContract & Fix
         self.testBitAndAndFetch(withOrder: nil)
     }
 
-    fileprivate func testBitOrAndFetch(withOrder order: AtomicOrder?) {
+    private func testBitOrAndFetch(withOrder order: AtomicOrder?) {
         func callTestFn(value: inout T, applyValue: T) -> T {
             if let order = order {
                 return value.atomicBitOrAndFetch(applyValue, withOrder: order)
@@ -234,7 +234,7 @@ class AtomicBitwiseContractTests<T: AtomicContract & AtomicBitwiseContract & Fix
         self.testBitOrAndFetch(withOrder: nil)
     }
 
-    fileprivate func testBitXorAndFetch(withOrder order: AtomicOrder?) {
+    private func testBitXorAndFetch(withOrder order: AtomicOrder?) {
         func callTestFn(value: inout T, applyValue: T) -> T {
             if let order = order {
                 return value.atomicBitXorAndFetch(applyValue, withOrder: order)

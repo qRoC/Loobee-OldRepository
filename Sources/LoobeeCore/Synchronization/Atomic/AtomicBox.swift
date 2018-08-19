@@ -169,9 +169,12 @@ public final class AtomicBox<T> where T: AnyObject {
     ) -> Bool {
         let failureOrder: AtomicOrder = {
             switch order {
-            case .release: return .relaxed
-            case .acqRel: return .acquire
-            default: return order
+            case .release:
+                return .relaxed
+            case .acqRel:
+                return .acquire
+            default:
+                return order
             }
         }()
 
@@ -269,9 +272,12 @@ public final class AtomicBox<T> where T: AnyObject {
         ) -> Bool {
         let failureOrder: AtomicOrder = {
             switch order {
-            case .release: return .relaxed
-            case .acqRel: return .acquire
-            default: return order
+            case .release:
+                return .relaxed
+            case .acqRel:
+                return .acquire
+            default:
+                return order
             }
         }()
 

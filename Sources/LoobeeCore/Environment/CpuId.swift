@@ -7,4 +7,4 @@
 
 import CLoobeeCore
 
-typealias CpuId = CLoobeeCoreCpuId
+public typealias CpuId = CLoobeeCoreCpuId

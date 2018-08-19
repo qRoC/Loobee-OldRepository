@@ -107,6 +107,10 @@ included:
   - Sources
   - Tests
 
+excluded:
+  - Tests/LinuxMain.swift
+  - Tests/*/XCTestManifests.swift
+
 file_header:
   required_pattern: |
                     \/\/ This file is part of the Loobee package\.

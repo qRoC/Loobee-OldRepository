@@ -8,7 +8,7 @@
 import LoobeeCore
 import XCTest
 
-class AtomicContractTests<T: AtomicContract & Equatable> {
+internal class AtomicContractTests<T: AtomicContract & Equatable> {
     let firstVariant: T
     let secondVariant: T
 
@@ -21,7 +21,7 @@ class AtomicContractTests<T: AtomicContract & Equatable> {
         _ = T.isAlwaysLockFree()
     }
 
-    fileprivate func testLoad(withOrder order: AtomicOrder?) {
+    private func testLoad(withOrder order: AtomicOrder?) {
         func callTestFn(value: inout T) -> T {
             if let order = order {
                 return value.atomicLoad(withOrder: order)
@@ -54,7 +54,7 @@ class AtomicContractTests<T: AtomicContract & Equatable> {
         testLoad(withOrder: nil)
     }
 
-    fileprivate func testStore(withOrder order: AtomicOrder?) {
+    private func testStore(withOrder order: AtomicOrder?) {
         func callTestFn(value: inout T) {
             if let order = order {
                 return value.atomicStore(self.secondVariant, withOrder: order)
@@ -85,7 +85,7 @@ class AtomicContractTests<T: AtomicContract & Equatable> {
         self.testStore(withOrder: nil)
     }
 
-    fileprivate func testExchange(withOrder order: AtomicOrder?) {
+    private func testExchange(withOrder order: AtomicOrder?) {
         func callTestFn(value: inout T, newValue: T) -> T {
             if let order = order {
                 return value.atomicExchange(newValue: newValue, withOrder: order)
@@ -127,12 +127,12 @@ class AtomicContractTests<T: AtomicContract & Equatable> {
         self.testExchange(withOrder: nil)
     }
 
-    fileprivate enum CompareAndExchange {
+    private enum CompareAndExchange {
         case weak
         case strong
     }
 
-    fileprivate func testCompareAndExchange(mode: CompareAndExchange, withOrder order: AtomicOrder?) {
+    private func testCompareAndExchange(mode: CompareAndExchange, withOrder order: AtomicOrder?) {
         func callTestFn(value: inout T, expected: inout T, desired: T) -> Bool {
             switch mode {
             case .weak:

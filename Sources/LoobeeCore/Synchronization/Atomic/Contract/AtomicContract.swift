@@ -80,7 +80,7 @@ public protocol AtomicContract {
     ) -> Bool
 }
 
-public extension AtomicContract {
+extension AtomicContract {
     /// Atomically assign the value with the `.seqCst` memory order.
     ///
     /// - Parameter value: The value to store.
@@ -132,9 +132,12 @@ public extension AtomicContract {
         ) -> Bool {
         let failureOrder: AtomicOrder = {
             switch order {
-            case .release: return .relaxed
-            case .acqRel: return .acquire
-            default: return order
+            case .release:
+                return .relaxed
+            case .acqRel:
+                return .acquire
+            default:
+                return order
             }
         }()
 
@@ -185,9 +188,12 @@ public extension AtomicContract {
         ) -> Bool {
         let failureOrder: AtomicOrder = {
             switch order {
-            case .release: return .relaxed
-            case .acqRel: return .acquire
-            default: return order
+            case .release:
+                return .relaxed
+            case .acqRel:
+                return .acquire
+            default:
+                return order
             }
         }()
 

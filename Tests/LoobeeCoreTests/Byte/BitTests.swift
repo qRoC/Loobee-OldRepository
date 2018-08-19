@@ -8,7 +8,7 @@
 import LoobeeCore
 import XCTest
 
-class ByteTests: XCTestCase {
+internal class ByteTests: XCTestCase {
     func testEquatable() {
         XCTAssertEqual(Bit.zero, Bit.zero)
         XCTAssertEqual(Bit.one, Bit.one)

@@ -8,7 +8,7 @@
 import LoobeeCore
 import XCTest
 
-class AtomicInt32Tests: XCTestCase {
+internal class AtomicInt32Tests: XCTestCase {
     typealias TestType = Int32
 
     static let firstVariant: TestType = 123
