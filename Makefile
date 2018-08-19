@@ -49,5 +49,5 @@ xcode:
 	swift package generate-xcodeproj
 
 .PHONY: linuxmain
-xcode:
+linuxmain:
 	swift test --generate-linuxmain
