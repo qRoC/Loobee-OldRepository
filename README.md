@@ -14,37 +14,13 @@ Swift is a set of components for the Swift programming language that provide sup
 `memory`, `byte`, `logger`, `concurrency`, `atomic`, `thread`, `container`, `environment`, `time`, etc.
 
 ## Table of Contents
-* [Features](#features)
+* [Prerequisites](#prerequisites)
 * [Getting Started](#getting-started)
 * [Contributing to Loobee](#contributing-to-loobee)
 * [Contact](#contact)
 
-## Features
-
- - [ ] [Byte](https://github.com/qRoC/Loobee/tree/master/Sources/Loobee/Byte)
-    - [x] `Byte` type.
-    - [ ] `ByteBuffer`.
- - [ ] [Concurrency](https://github.com/qRoC/Loobee/tree/master/Sources/Loobee/Concurrency)
-     - [x] `Atomic` types.
-     - [ ] `Threads`.
- - [ ] [Container](https://github.com/qRoC/Loobee/tree/master/Sources/Loobee/Container)
-     - [ ] `Container`.
- - [ ] [Environment](https://github.com/qRoC/Loobee/tree/master/Sources/Loobee/Environment)
-     - [x] `Environment`.
-     - [x] `CpuId`.
- - [ ] [Error](https://github.com/qRoC/Loobee/tree/master/Sources/Loobee/Error)
-     - [x] `Errors` base types.
- - [ ] [Logger](https://github.com/qRoC/Loobee/tree/master/Sources/Loobee/Logger)
-    - [x] `Logger` domain.
-    - [ ] `File` logger
- - [ ] [Memory](https://github.com/qRoC/Loobee/tree/master/Sources/Loobee/Memory)
-     - [x] `Malloc allocator`.
-     - [ ] `Small block allocator`
- - [ ] [Scope](https://github.com/qRoC/Loobee/tree/master/Sources/Loobee/Scope)
-     - [x] `IndirectBox`.
- - [ ] [Time](https://github.com/qRoC/Loobee/tree/master/Sources/Loobee/Time)
-     - [ ] `Steady` time.
-     - [ ] `System` time.
+## Prerequisites
+Swift 4.2 or above
 
 ## Getting Started
 
@@ -64,7 +40,7 @@ Make commands:
 All improvements to Loobee are very welcome!
 
 ## Contact
-[qRoC](https://github.com/qRoC) is the author and maintainer of Loobee. Feel free contact him directly via [email](mailto:admin@qroc.pro).
+[qRoC](https://github.com/qRoC) is the author and maintainer of Loobee. Feel free contact him directly via [email](mailto:contact@qroc.pro).
 
 If you have a question about this library, we recommend [opening an issue](https://github.com/qRoC/Loobee/issues/new).
 
