@@ -5,8 +5,8 @@
 // For the full copyright and license information, please view the LICENSE
 // file that was distributed with this source code.
 
-import XCTest
 import LoobeeCore
+import XCTest
 
 class AtomicArithmeticContractTests<T: AtomicContract & AtomicArithmeticContract & FixedWidthInteger> {
     let firstVariant: T
@@ -19,7 +19,7 @@ class AtomicArithmeticContractTests<T: AtomicContract & AtomicArithmeticContract
 
     fileprivate func testFetchAndAdd(withOrder order: AtomicOrder?) {
         func callTestFn(value: inout T, valueToAdd: T) -> T {
-            if let order =  order {
+            if let order = order {
                 return value.atomicFetchAndAdd(valueToAdd, withOrder: order)
             }
 
@@ -38,34 +38,34 @@ class AtomicArithmeticContractTests<T: AtomicContract & AtomicArithmeticContract
     func testFetchAndAddRelaxed() {
         self.testFetchAndAdd(withOrder: .relaxed)
     }
-    
+
     func testFetchAndAddConsume() {
         self.testFetchAndAdd(withOrder: .consume)
     }
-    
+
     func testFetchAndAddAcquire() {
         self.testFetchAndAdd(withOrder: .acquire)
     }
-    
+
     func testFetchAndAddRelease() {
         self.testFetchAndAdd(withOrder: .release)
     }
-    
+
     func testFetchAndAddAcqRel() {
         self.testFetchAndAdd(withOrder: .acqRel)
     }
-    
+
     func testFetchAndAddSeqCst() {
         self.testFetchAndAdd(withOrder: .seqCst)
     }
-    
+
     func testFetchAndAddDefault() {
         self.testFetchAndAdd(withOrder: nil)
     }
 
     fileprivate func testFetchAndSub(withOrder order: AtomicOrder?) {
         func callTestFn(value: inout T, valueToSub: T) -> T {
-            if let order =  order {
+            if let order = order {
                 return value.atomicFetchAndSub(valueToSub, withOrder: order)
             }
 
@@ -111,7 +111,7 @@ class AtomicArithmeticContractTests<T: AtomicContract & AtomicArithmeticContract
 
     fileprivate func testAddAndFetch(withOrder order: AtomicOrder?) {
         func callTestFn(value: inout T, valueToAdd: T) -> T {
-            if let order =  order {
+            if let order = order {
                 return value.atomicAddAndFetch(valueToAdd, withOrder: order)
             }
 
@@ -157,7 +157,7 @@ class AtomicArithmeticContractTests<T: AtomicContract & AtomicArithmeticContract
 
     fileprivate func testSubAndFetch(withOrder order: AtomicOrder?) {
         func callTestFn(value: inout T, valueToSub: T) -> T {
-            if let order =  order {
+            if let order = order {
                 return value.atomicSubAndFetch(valueToSub, withOrder: order)
             }
 

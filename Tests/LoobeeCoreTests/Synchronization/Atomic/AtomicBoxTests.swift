@@ -5,8 +5,8 @@
 // For the full copyright and license information, please view the LICENSE
 // file that was distributed with this source code.
 
-import XCTest
 import LoobeeCore
+import XCTest
 
 class AtomicBoxTests: XCTestCase {
     class Foo {}
@@ -17,7 +17,7 @@ class AtomicBoxTests: XCTestCase {
 
     fileprivate func testLoad(withOrder order: AtomicOrder?) {
         func callTestFn(_ object: AtomicBox<Foo>) -> Foo {
-            if let order =  order {
+            if let order = order {
                 return object.load(withOrder: order)
             }
 
@@ -50,7 +50,7 @@ class AtomicBoxTests: XCTestCase {
 
     fileprivate func testStore(withOrder order: AtomicOrder?) {
         func callTestFn(_ object: AtomicBox<Foo>, _ newObject: Foo) {
-            if let order =  order {
+            if let order = order {
                 return object.store(newObject, withOrder: order)
             }
 
@@ -82,7 +82,7 @@ class AtomicBoxTests: XCTestCase {
 
     fileprivate func testExchange(withOrder order: AtomicOrder?) {
         func callTestFn(_ object: AtomicBox<Foo>, newObject: Foo) -> Foo {
-            if let order =  order {
+            if let order = order {
                 return object.exchange(newObject: newObject, withOrder: order)
             }
 
@@ -133,7 +133,7 @@ class AtomicBoxTests: XCTestCase {
         func callTestFn(_ object: AtomicBox<Foo>, expected: inout Foo, desired: Foo) -> Bool {
             switch mode {
             case .weak:
-                if let order =  order {
+                if let order = order {
                     return object.compareAndExchangeWeak(
                         expected: &expected,
                         desired: desired,
@@ -143,7 +143,7 @@ class AtomicBoxTests: XCTestCase {
 
                 return object.compareAndExchangeWeak(expected: &expected, desired: desired)
             case .strong:
-                if let order =  order {
+                if let order = order {
                     return object.compareAndExchangeStrong(
                         expected: &expected,
                         desired: desired,

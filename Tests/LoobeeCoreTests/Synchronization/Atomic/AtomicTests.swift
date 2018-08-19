@@ -5,8 +5,8 @@
 // For the full copyright and license information, please view the LICENSE
 // file that was distributed with this source code.
 
-import XCTest
 import LoobeeCore
+import XCTest
 
 class AtomicTests: XCTestCase {
     func testIsAlwaysLockFree() {
@@ -275,8 +275,8 @@ class AtomicTests: XCTestCase {
     }
 
     func testFetchAndBitAnd() {
-        let obj1 = Atomic(11241)
-        var obj2 = 11241
+        let obj1 = Atomic(11_241)
+        var obj2 = 11_241
 
         for order: AtomicOrder in [.relaxed, .consume, .acquire, .release, .acqRel, .seqCst] {
             XCTAssertEqual(
@@ -287,15 +287,15 @@ class AtomicTests: XCTestCase {
         }
 
         XCTAssertEqual(
-            obj1.fetchAndBitAnd(21551),
-            obj2.atomicFetchAndBitAnd(21551)
+            obj1.fetchAndBitAnd(21_551),
+            obj2.atomicFetchAndBitAnd(21_551)
         )
         XCTAssertEqual(obj1.load(), obj2.atomicLoad())
     }
 
     func testFetchAndBitOr() {
-        let obj1 = Atomic(11241)
-        var obj2 = 11241
+        let obj1 = Atomic(11_241)
+        var obj2 = 11_241
 
         for order: AtomicOrder in [.relaxed, .consume, .acquire, .release, .acqRel, .seqCst] {
             XCTAssertEqual(
@@ -306,15 +306,15 @@ class AtomicTests: XCTestCase {
         }
 
         XCTAssertEqual(
-            obj1.fetchAndBitOr(21551),
-            obj2.atomicFetchAndBitOr(21551)
+            obj1.fetchAndBitOr(21_551),
+            obj2.atomicFetchAndBitOr(21_551)
         )
         XCTAssertEqual(obj1.load(), obj2.atomicLoad())
     }
 
     func testFetchAndBitXor() {
-        let obj1 = Atomic(11241)
-        var obj2 = 11241
+        let obj1 = Atomic(11_241)
+        var obj2 = 11_241
 
         for order: AtomicOrder in [.relaxed, .consume, .acquire, .release, .acqRel, .seqCst] {
             XCTAssertEqual(
@@ -325,15 +325,15 @@ class AtomicTests: XCTestCase {
         }
 
         XCTAssertEqual(
-            obj1.fetchAndBitXor(21551),
-            obj2.atomicFetchAndBitXor(21551)
+            obj1.fetchAndBitXor(21_551),
+            obj2.atomicFetchAndBitXor(21_551)
         )
         XCTAssertEqual(obj1.load(), obj2.atomicLoad())
     }
 
     func testBitAndAndFetch() {
-        let obj1 = Atomic(11241)
-        var obj2 = 11241
+        let obj1 = Atomic(11_241)
+        var obj2 = 11_241
 
         for order: AtomicOrder in [.relaxed, .consume, .acquire, .release, .acqRel, .seqCst] {
             XCTAssertEqual(
@@ -344,15 +344,15 @@ class AtomicTests: XCTestCase {
         }
 
         XCTAssertEqual(
-            obj1.bitAndAndFetch(21551),
-            obj2.atomicBitAndAndFetch(21551)
+            obj1.bitAndAndFetch(21_551),
+            obj2.atomicBitAndAndFetch(21_551)
         )
         XCTAssertEqual(obj1.load(), obj2.atomicLoad())
     }
 
     func testBitOrAndFetch() {
-        let obj1 = Atomic(11241)
-        var obj2 = 11241
+        let obj1 = Atomic(11_241)
+        var obj2 = 11_241
 
         for order: AtomicOrder in [.relaxed, .consume, .acquire, .release, .acqRel, .seqCst] {
             XCTAssertEqual(
@@ -363,15 +363,15 @@ class AtomicTests: XCTestCase {
         }
 
         XCTAssertEqual(
-            obj1.bitOrAndFetch(21551),
-            obj2.atomicBitOrAndFetch(21551)
+            obj1.bitOrAndFetch(21_551),
+            obj2.atomicBitOrAndFetch(21_551)
         )
         XCTAssertEqual(obj1.load(), obj2.atomicLoad())
     }
 
     func testBitXOrAndFetch() {
-        let obj1 = Atomic(11241)
-        var obj2 = 11241
+        let obj1 = Atomic(11_241)
+        var obj2 = 11_241
 
         for order: AtomicOrder in [.relaxed, .consume, .acquire, .release, .acqRel, .seqCst] {
             XCTAssertEqual(
@@ -382,48 +382,48 @@ class AtomicTests: XCTestCase {
         }
 
         XCTAssertEqual(
-            obj1.bitXorAndFetch(21551),
-            obj2.atomicBitXorAndFetch(21551)
+            obj1.bitXorAndFetch(21_551),
+            obj2.atomicBitXorAndFetch(21_551)
         )
         XCTAssertEqual(obj1.load(), obj2.atomicLoad())
     }
 
     func testOperatorAnd() {
-        let obj1 = Atomic(11241)
-        var obj2 = 11241
+        let obj1 = Atomic(11_241)
+        var obj2 = 11_241
 
-        obj1 &= 21551
-        _ = obj2.atomicBitAndAndFetch(21551)
+        obj1 &= 21_551
+        _ = obj2.atomicBitAndAndFetch(21_551)
         XCTAssertEqual(obj1.load(), obj2.atomicLoad())
 
-        obj1 &= Atomic(21551)
-        _ = obj2.atomicBitAndAndFetch(21551)
+        obj1 &= Atomic(21_551)
+        _ = obj2.atomicBitAndAndFetch(21_551)
         XCTAssertEqual(obj1.load(), obj2.atomicLoad())
     }
 
     func testOperatorOr() {
-        let obj1 = Atomic(11241)
-        var obj2 = 11241
+        let obj1 = Atomic(11_241)
+        var obj2 = 11_241
 
-        obj1 |= 21551
-        _ = obj2.atomicBitOrAndFetch(21551)
+        obj1 |= 21_551
+        _ = obj2.atomicBitOrAndFetch(21_551)
         XCTAssertEqual(obj1.load(), obj2.atomicLoad())
 
-        obj1 |= Atomic(21551)
-        _ = obj2.atomicBitOrAndFetch(21551)
+        obj1 |= Atomic(21_551)
+        _ = obj2.atomicBitOrAndFetch(21_551)
         XCTAssertEqual(obj1.load(), obj2.atomicLoad())
     }
 
     func testOperatorXor() {
-        let obj1 = Atomic(11241)
-        var obj2 = 11241
+        let obj1 = Atomic(11_241)
+        var obj2 = 11_241
 
-        obj1 ^= 21551
-        _ = obj2.atomicBitXorAndFetch(21551)
+        obj1 ^= 21_551
+        _ = obj2.atomicBitXorAndFetch(21_551)
         XCTAssertEqual(obj1.load(), obj2.atomicLoad())
 
-        obj1 ^= Atomic(21551)
-        _ = obj2.atomicBitXorAndFetch(21551)
+        obj1 ^= Atomic(21_551)
+        _ = obj2.atomicBitXorAndFetch(21_551)
         XCTAssertEqual(obj1.load(), obj2.atomicLoad())
     }
 }

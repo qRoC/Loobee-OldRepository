@@ -130,7 +130,6 @@ public final class AtomicBox<T> where T: AnyObject {
             var expectedAddress = UInt(bitPattern: expectedPointer.toOpaque())
             let desiredAddress = UInt(bitPattern: desiredPointer.toOpaque())
 
-
             let result = self.address.atomicCompareAndExchangeWeak(
                 expected: &expectedAddress,
                 desired: desiredAddress,

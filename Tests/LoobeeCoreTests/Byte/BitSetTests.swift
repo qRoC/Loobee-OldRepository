@@ -5,8 +5,8 @@
 // For the full copyright and license information, please view the LICENSE
 // file that was distributed with this source code.
 
-import XCTest
 import LoobeeCore
+import XCTest
 
 class BitSetTests: XCTestCase {
     func testBitWidth() {

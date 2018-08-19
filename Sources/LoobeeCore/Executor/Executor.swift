@@ -23,7 +23,7 @@ public protocol Executor: class {
 
     /// Enqueue a function with a given priority, where 0 is the medium priority
     /// This is up to the implementation to enforce
-    func add(_: () -> Void, withPriority: ExecutorPriority);
+    func add(_: () -> Void, withPriority: ExecutorPriority)
 }
 
 public extension Executor {

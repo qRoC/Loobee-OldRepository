@@ -5,8 +5,8 @@
 // For the full copyright and license information, please view the LICENSE
 // file that was distributed with this source code.
 
-import XCTest
 import LoobeeCore
+import XCTest
 
 class AtomicContractTests<T: AtomicContract & Equatable> {
     let firstVariant: T
@@ -23,7 +23,7 @@ class AtomicContractTests<T: AtomicContract & Equatable> {
 
     fileprivate func testLoad(withOrder order: AtomicOrder?) {
         func callTestFn(value: inout T) -> T {
-            if let order =  order {
+            if let order = order {
                 return value.atomicLoad(withOrder: order)
             }
 
@@ -56,7 +56,7 @@ class AtomicContractTests<T: AtomicContract & Equatable> {
 
     fileprivate func testStore(withOrder order: AtomicOrder?) {
         func callTestFn(value: inout T) {
-            if let order =  order {
+            if let order = order {
                 return value.atomicStore(self.secondVariant, withOrder: order)
             }
 
@@ -87,7 +87,7 @@ class AtomicContractTests<T: AtomicContract & Equatable> {
 
     fileprivate func testExchange(withOrder order: AtomicOrder?) {
         func callTestFn(value: inout T, newValue: T) -> T {
-            if let order =  order {
+            if let order = order {
                 return value.atomicExchange(newValue: newValue, withOrder: order)
             }
 
@@ -136,7 +136,7 @@ class AtomicContractTests<T: AtomicContract & Equatable> {
         func callTestFn(value: inout T, expected: inout T, desired: T) -> Bool {
             switch mode {
             case .weak:
-                if let order =  order {
+                if let order = order {
                     return value.atomicCompareAndExchangeWeak(
                         expected: &expected,
                         desired: desired,
@@ -146,7 +146,7 @@ class AtomicContractTests<T: AtomicContract & Equatable> {
 
                 return value.atomicCompareAndExchangeWeak(expected: &expected, desired: desired)
             case .strong:
-                if let order =  order {
+                if let order = order {
                     return value.atomicCompareAndExchangeStrong(
                         expected: &expected,
                         desired: desired,
