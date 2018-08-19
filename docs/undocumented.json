@@ -1,0 +1,229 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/qroc/Development/MyProjects/Loobee/Sources/LoobeeCore/Byte/Bit.swift",
+      "line": 10,
+      "symbol": "Bit.zero",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qroc/Development/MyProjects/Loobee/Sources/LoobeeCore/Byte/Bit.swift",
+      "line": 11,
+      "symbol": "Bit.one",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qroc/Development/MyProjects/Loobee/Sources/LoobeeCore/Byte/BitReference.swift",
+      "line": 21,
+      "symbol": "BitReference.value",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qroc/Development/MyProjects/Loobee/Sources/LoobeeCore/Byte/BitReference.swift",
+      "line": 71,
+      "symbol": "swap(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qroc/Development/MyProjects/Loobee/Sources/LoobeeCore/Byte/BitReference.swift",
+      "line": 78,
+      "symbol": "swap(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qroc/Development/MyProjects/Loobee/Sources/LoobeeCore/Byte/BitReference.swift",
+      "line": 85,
+      "symbol": "swap(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qroc/Development/MyProjects/Loobee/Sources/LoobeeCore/Byte/BitReference.swift",
+      "line": 92,
+      "symbol": "swap(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qroc/Development/MyProjects/Loobee/Sources/LoobeeCore/Environment/CpuId.swift",
+      "line": 10,
+      "symbol": "CpuId",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qroc/Development/MyProjects/Loobee/Sources/LoobeeCore/Environment/Environment.swift",
+      "line": 10,
+      "symbol": "Environment.current",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qroc/Development/MyProjects/Loobee/Sources/LoobeeCore/Executor/Executor.swift",
+      "line": 10,
+      "symbol": "ExecutorPriority.low",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qroc/Development/MyProjects/Loobee/Sources/LoobeeCore/Executor/Executor.swift",
+      "line": 11,
+      "symbol": "ExecutorPriority.medium",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qroc/Development/MyProjects/Loobee/Sources/LoobeeCore/Executor/Executor.swift",
+      "line": 12,
+      "symbol": "ExecutorPriority.high",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qroc/Development/MyProjects/Loobee/Sources/LoobeeCore/Executor/Executor.swift",
+      "line": 13,
+      "symbol": "ExecutorPriority.custom(value:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qroc/Development/MyProjects/Loobee/Sources/LoobeeCore/Executor/Executor.swift",
+      "line": 18,
+      "symbol": "Executor.numPriorities",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qroc/Development/MyProjects/Loobee/Sources/LoobeeCore/Logger/LogLevel.swift",
+      "line": null,
+      "symbol": "LogLevel",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qroc/Development/MyProjects/Loobee/Sources/LoobeeCore/Logger/LogLevel.swift",
+      "line": 8,
+      "symbol": "LogLevel",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qroc/Development/MyProjects/Loobee/Sources/LoobeeCore/Logger/LogLevel.swift",
+      "line": 9,
+      "symbol": "LogLevel.emergency",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qroc/Development/MyProjects/Loobee/Sources/LoobeeCore/Logger/LogLevel.swift",
+      "line": 10,
+      "symbol": "LogLevel.alert",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qroc/Development/MyProjects/Loobee/Sources/LoobeeCore/Logger/LogLevel.swift",
+      "line": 11,
+      "symbol": "LogLevel.critical",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qroc/Development/MyProjects/Loobee/Sources/LoobeeCore/Logger/LogLevel.swift",
+      "line": 12,
+      "symbol": "LogLevel.error",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qroc/Development/MyProjects/Loobee/Sources/LoobeeCore/Logger/LogLevel.swift",
+      "line": 13,
+      "symbol": "LogLevel.warning",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qroc/Development/MyProjects/Loobee/Sources/LoobeeCore/Logger/LogLevel.swift",
+      "line": 14,
+      "symbol": "LogLevel.notice",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qroc/Development/MyProjects/Loobee/Sources/LoobeeCore/Logger/LogLevel.swift",
+      "line": 15,
+      "symbol": "LogLevel.info",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qroc/Development/MyProjects/Loobee/Sources/LoobeeCore/Logger/LogLevel.swift",
+      "line": 16,
+      "symbol": "LogLevel.debug",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qroc/Development/MyProjects/Loobee/Sources/LoobeeCore/Logger/Logger.swift",
+      "line": 13,
+      "symbol": "Logger.ContextData",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qroc/Development/MyProjects/Loobee/Sources/LoobeeCore/Logger/Logger.swift",
+      "line": 40,
+      "symbol": "Logger.log(_:_:context:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qroc/Development/MyProjects/Loobee/Sources/LoobeeCore/Logger/LoggerAware.swift",
+      "line": 10,
+      "symbol": "LoggerAware.setLogger(logger:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qroc/Development/MyProjects/Loobee/Sources/LoobeeCore/Synchronization/Atomic/AtomicBox.swift",
+      "line": 14,
+      "symbol": "AtomicBox.init(object:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qroc/Development/MyProjects/Loobee/Sources/LoobeeCore/Synchronization/Atomic/Contract/AtomicArithmeticContract.swift",
+      "line": null,
+      "symbol": "AtomicArithmeticContract",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qroc/Development/MyProjects/Loobee/Sources/LoobeeCore/Synchronization/Atomic/Contract/AtomicArithmeticContract.swift",
+      "line": 8,
+      "symbol": "AtomicArithmeticContract",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qroc/Development/MyProjects/Loobee/Sources/LoobeeCore/Synchronization/Atomic/Contract/AtomicBitwiseContract.swift",
+      "line": null,
+      "symbol": "AtomicBitwiseContract",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/qroc/Development/MyProjects/Loobee/Sources/LoobeeCore/Synchronization/Atomic/Contract/AtomicBitwiseContract.swift",
+      "line": 8,
+      "symbol": "AtomicBitwiseContract",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/qroc/Development/MyProjects/Loobee"
+}

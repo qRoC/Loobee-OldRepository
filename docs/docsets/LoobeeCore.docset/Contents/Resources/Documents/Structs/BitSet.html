@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>BitSet Structure Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset="utf-8">
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+
+    <a name="//apple_ref/swift/Struct/BitSet" class="dashAnchor"></a>
+
+    <a title="BitSet Structure Reference"></a>
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="../index.html">
+          LoobeeCore Docs
+        </a>
+         (92% documented)
+      </p>
+    
+      <p class="header-col--secondary">
+        <form role="search" action="../search.json">
+          <input type="text" placeholder="Search documentation" data-typeahead>
+        </form>
+      </p>
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="https://github.com/qRoC/Loobee">
+            <img class="header-icon" src="../img/gh.png"/>
+            View on GitHub
+          </a>
+        </p>
+    
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="../index.html">LoobeeCore Reference</a>
+      <img class="carat" src="../img/carat.png" />
+      BitSet Structure Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/Atomic.html">Atomic</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/AtomicBox.html">AtomicBox</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/Environment.html">Environment</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/Bit.html">Bit</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/ExecutorPriority.html">ExecutorPriority</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/LogLevel.html">LogLevel</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/Bool.html">Bool</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/Int.html">Int</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/Int16.html">Int16</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/Int32.html">Int32</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/Int64.html">Int64</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/Int8.html">Int8</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/UInt.html">UInt</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/UInt16.html">UInt16</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/UInt32.html">UInt32</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/UInt64.html">UInt64</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/UInt8.html">UInt8</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:10LoobeeCore4swapyyAA12BitReferenceVyxGz_AA0D0Ozts17FixedWidthIntegerRzlF">swap(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:10LoobeeCore4swapyyAA12BitReferenceVyxGz_ADyq_Gzts17FixedWidthIntegerRzsAGR_r0_lF">swap(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:10LoobeeCore4swapyyAA12BitReferenceVyxGz_AEzts17FixedWidthIntegerRzlF">swap(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:10LoobeeCore4swapyyAA3BitOz_AA0D9ReferenceVyxGzts17FixedWidthIntegerRzlF">swap(_:_:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/AtomicArithmeticContract.html">AtomicArithmeticContract</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/AtomicBitwiseContract.html">AtomicBitwiseContract</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/AtomicContract.html">AtomicContract</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/Executor.html">Executor</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/Logger.html">Logger</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/LoggerAware.html">LoggerAware</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/BitReference.html">BitReference</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/BitSet.html">BitSet</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:10LoobeeCore11AtomicOrdera">AtomicOrder</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:10LoobeeCore4Bytea">Byte</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:10LoobeeCore5CpuIda">CpuId</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content">
+            <h1>BitSet</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">BitSet</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt">FixedWidthInteger</span></code></pre>
+
+                </div>
+              </div>
+            <p>Represents a fixed-size sequence of <code>MemoryLayout&lt;T&gt;.size * 8</code> bits.</p>
+
+<p>Can be manipulated by standard logic operators.</p>
+
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-content">
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10LoobeeCore6BitSetVACyxGycfc"></a>
+                    <a name="//apple_ref/swift/Method/init()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10LoobeeCore6BitSetVACyxGycfc">init()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates a new instance with all bits set to zero.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">public</span> <span class="nf">init</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10LoobeeCore6BitSetVyACyxGxcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10LoobeeCore6BitSetVyACyxGxcfc">init(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates a new instance from the given integer.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">bitset</span><span class="p">:</span> <span class="kt">BitSet</span><span class="o">&lt;</span><span class="kt">UInt8</span><span class="o">&gt;</span> <span class="o">=</span> <span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="mb">0b1100_0011</span><span class="p">)</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">_</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">T</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10LoobeeCore6BitSetV18truncatingIfNeededACyxGqd___tcs13BinaryIntegerRd__lufc"></a>
+                    <a name="//apple_ref/swift/Method/init(truncatingIfNeeded:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10LoobeeCore6BitSetV18truncatingIfNeededACyxGqd___tcs13BinaryIntegerRd__lufc">init(truncatingIfNeeded:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates a new instance from the bit pattern of the given integer
+by sign-extending or truncating to fit this type.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">truncatedBitset</span><span class="p">:</span> <span class="kt">BitSet</span><span class="o">&lt;</span><span class="kt">UInt8</span><span class="o">&gt;</span> <span class="o">=</span> <span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="nv">truncatingIfNeeded</span><span class="p">:</span> <span class="mb">0b0011_0011_1100_0011</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">bitset</span><span class="p">:</span> <span class="kt">BitSet</span><span class="o">&lt;</span><span class="kt">UInt8</span><span class="o">&gt;</span> <span class="o">=</span> <span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="mb">0b1100_0011</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">truncatedBitset</span> <span class="o">==</span> <span class="n">bitset</span><span class="p">)</span> <span class="c1">//true</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">public</span> <span class="kd">init</span><span class="o">&lt;</span><span class="kt">U</span><span class="o">&gt;</span><span class="p">(</span><span class="n">truncatingIfNeeded</span> <span class="nv">source</span><span class="p">:</span> <span class="kt">U</span><span class="p">)</span> <span class="k">where</span> <span class="kt">U</span> <span class="p">:</span> <span class="kt">BinaryInteger</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10LoobeeCore6BitSetV8bitWidthSivpZ"></a>
+                    <a name="//apple_ref/swift/Variable/bitWidth" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10LoobeeCore6BitSetV8bitWidthSivpZ">bitWidth</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The number of bits.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">bitWidth</span><span class="p">:</span> <span class="kt">Int</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10LoobeeCore6BitSetV011leadingZeroC5CountSivp"></a>
+                    <a name="//apple_ref/swift/Property/leadingZeroBitCount" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10LoobeeCore6BitSetV011leadingZeroC5CountSivp">leadingZeroBitCount</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The number of leading zero bits.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">count3</span><span class="p">:</span> <span class="kt">BitSet</span><span class="o">&lt;</span><span class="kt">UInt8</span><span class="o">&gt;</span> <span class="o">=</span> <span class="mb">0b0001_1111</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">count3</span><span class="o">.</span><span class="n">leadingZeroBitCount</span> <span class="o">==</span> <span class="mi">3</span><span class="p">)</span> <span class="c1">// true</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">public</span> <span class="k">var</span> <span class="nv">leadingZeroBitCount</span><span class="p">:</span> <span class="kt">Int</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10LoobeeCore6BitSetV012trailingZeroC5CountSivp"></a>
+                    <a name="//apple_ref/swift/Property/trailingZeroBitCount" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10LoobeeCore6BitSetV012trailingZeroC5CountSivp">trailingZeroBitCount</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The number of trailing zero bits.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">count3</span><span class="p">:</span> <span class="kt">BitSet</span><span class="o">&lt;</span><span class="kt">UInt8</span><span class="o">&gt;</span> <span class="o">=</span> <span class="mb">0b1111_1000</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">count3</span><span class="o">.</span><span class="n">trailingZeroBitCount</span> <span class="o">==</span> <span class="mi">3</span><span class="p">)</span> <span class="c1">// true</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">public</span> <span class="k">var</span> <span class="nv">trailingZeroBitCount</span><span class="p">:</span> <span class="kt">Int</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10LoobeeCore6BitSetV07nonzeroC5CountSivp"></a>
+                    <a name="//apple_ref/swift/Property/nonzeroBitCount" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10LoobeeCore6BitSetV07nonzeroC5CountSivp">nonzeroBitCount</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The number of non zero bits.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">count5</span><span class="p">:</span> <span class="kt">BitSet</span><span class="o">&lt;</span><span class="kt">UInt8</span><span class="o">&gt;</span> <span class="o">=</span> <span class="mb">0b1111_1000</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">count5</span><span class="o">.</span><span class="n">nonzeroBitCount</span> <span class="o">==</span> <span class="mi">5</span><span class="p">)</span> <span class="c1">// true</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">public</span> <span class="k">var</span> <span class="nv">nonzeroBitCount</span><span class="p">:</span> <span class="kt">Int</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10LoobeeCore6BitSetV9isAllOnesSbvp"></a>
+                    <a name="//apple_ref/swift/Property/isAllOnes" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10LoobeeCore6BitSetV9isAllOnesSbvp">isAllOnes</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns true if all bits are set to true, otherwise false.</p>
+<pre class="highlight swift"><code><span class="nf">print</span><span class="p">(</span><span class="kt">BitSet</span><span class="p">(</span><span class="kt">UInt8</span><span class="p">(</span><span class="mb">0b1111_1111</span><span class="p">))</span><span class="o">.</span><span class="n">isAllOnes</span><span class="p">)</span> <span class="c1">// true</span>
+<span class="nf">print</span><span class="p">(</span><span class="kt">BitSet</span><span class="p">(</span><span class="kt">UInt8</span><span class="p">(</span><span class="mb">0b1111_1110</span><span class="p">))</span><span class="o">.</span><span class="n">isAllOnes</span><span class="p">)</span> <span class="c1">// false</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">public</span> <span class="k">var</span> <span class="nv">isAllOnes</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10LoobeeCore6BitSetV10isAllZerosSbvp"></a>
+                    <a name="//apple_ref/swift/Property/isAllZeros" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10LoobeeCore6BitSetV10isAllZerosSbvp">isAllZeros</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns true if all bits are set to true, otherwise false.</p>
+<pre class="highlight swift"><code><span class="nf">print</span><span class="p">(</span><span class="kt">BitSet</span><span class="p">(</span><span class="kt">UInt8</span><span class="p">(</span><span class="mb">0b0000_0000</span><span class="p">))</span><span class="o">.</span><span class="n">isAllZeros</span><span class="p">)</span> <span class="c1">// true</span>
+<span class="nf">print</span><span class="p">(</span><span class="kt">BitSet</span><span class="p">(</span><span class="kt">UInt8</span><span class="p">(</span><span class="mb">0b0000_0001</span><span class="p">))</span><span class="o">.</span><span class="n">isAllZeros</span><span class="p">)</span> <span class="c1">// false</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">public</span> <span class="k">var</span> <span class="nv">isAllZeros</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10LoobeeCore6BitSetV9isAnyOnesSbvp"></a>
+                    <a name="//apple_ref/swift/Property/isAnyOnes" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10LoobeeCore6BitSetV9isAnyOnesSbvp">isAnyOnes</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns true if all bits are set to true, otherwise false.</p>
+<pre class="highlight swift"><code><span class="nf">print</span><span class="p">(</span><span class="kt">BitSet</span><span class="p">(</span><span class="kt">UInt8</span><span class="p">(</span><span class="mb">0b0000_0001</span><span class="p">))</span><span class="o">.</span><span class="n">isAnyOnes</span><span class="p">)</span> <span class="c1">// true</span>
+<span class="nf">print</span><span class="p">(</span><span class="kt">BitSet</span><span class="p">(</span><span class="kt">UInt8</span><span class="p">(</span><span class="mb">0b0000_0000</span><span class="p">))</span><span class="o">.</span><span class="n">isAnyOnes</span><span class="p">)</span> <span class="c1">// false</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">public</span> <span class="k">var</span> <span class="nv">isAnyOnes</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10LoobeeCore6BitSetV12integerValuexvp"></a>
+                    <a name="//apple_ref/swift/Property/integerValue" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10LoobeeCore6BitSetV12integerValuexvp">integerValue</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns integer representation.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">public</span> <span class="k">var</span> <span class="nv">integerValue</span><span class="p">:</span> <span class="kt">T</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10LoobeeCore6BitSetVyAA0C0O9MagnitudeQzcip"></a>
+                    <a name="//apple_ref/swift/Method/subscript(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10LoobeeCore6BitSetVyAA0C0O9MagnitudeQzcip">subscript(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Access to a specific bit.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">public</span> <span class="nf">subscript</span><span class="p">(</span><span class="nv">position</span><span class="p">:</span> <span class="kt">T</span><span class="o">.</span><span class="kt">Magnitude</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Enums/Bit.html">Bit</a></span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10LoobeeCore6BitSetVyAA0C9ReferenceVyxG9MagnitudeQzcip"></a>
+                    <a name="//apple_ref/swift/Method/subscript(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10LoobeeCore6BitSetVyAA0C9ReferenceVyxG9MagnitudeQzcip">subscript(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Access to reference on a specific bit.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">public</span> <span class="nf">subscript</span><span class="p">(</span><span class="nv">position</span><span class="p">:</span> <span class="kt">T</span><span class="o">.</span><span class="kt">Magnitude</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/BitReference.html">BitReference</a></span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span> <span class="p">{</span> <span class="k">mutating</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10LoobeeCore6BitSetV4testyAA0C0OSg9MagnitudeQzF"></a>
+                    <a name="//apple_ref/swift/Method/test(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10LoobeeCore6BitSetV4testyAA0C0OSg9MagnitudeQzF">test(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Performs a bounds check and returns nil if position does not correspond to a valid position in the bitset.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">bitset</span><span class="p">:</span> <span class="kt">BitSet</span><span class="o">&lt;</span><span class="kt">UInt8</span><span class="o">&gt;</span> <span class="o">=</span> <span class="mb">0b0101_0101</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">bitset</span><span class="o">.</span><span class="nf">test</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">==</span> <span class="o">.</span><span class="n">one</span><span class="p">)</span> <span class="c1">// true</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">bitset</span><span class="o">.</span><span class="nf">test</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span> <span class="o">==</span> <span class="kc">nil</span><span class="p">)</span> <span class="c1">// true</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">test</span><span class="p">(</span><span class="n">_</span> <span class="nv">position</span><span class="p">:</span> <span class="kt">T</span><span class="o">.</span><span class="kt">Magnitude</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Enums/Bit.html">Bit</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10LoobeeCore6BitSetV3setyyF"></a>
+                    <a name="//apple_ref/swift/Method/set()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10LoobeeCore6BitSetV3setyyF">set()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sets all bits to <code>.one</code>.</p>
+<pre class="highlight swift"><code><span class="k">var</span> <span class="nv">bitset</span><span class="p">:</span> <span class="kt">BitSet</span><span class="o">&lt;</span><span class="kt">UInt8</span><span class="o">&gt;</span> <span class="o">=</span> <span class="mb">0b0101_0101</span>
+<span class="n">bitset</span><span class="o">.</span><span class="nf">set</span><span class="p">()</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">bitset</span><span class="o">.</span><span class="n">isAllOnes</span><span class="p">)</span> <span class="c1">// true</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">public</span> <span class="k">mutating</span> <span class="kd">func</span> <span class="nf">set</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10LoobeeCore6BitSetV5resetyyF"></a>
+                    <a name="//apple_ref/swift/Method/reset()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10LoobeeCore6BitSetV5resetyyF">reset()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sets all bits to <code>.zero</code>.</p>
+<pre class="highlight swift"><code><span class="k">var</span> <span class="nv">bitset</span><span class="p">:</span> <span class="kt">BitSet</span><span class="o">&lt;</span><span class="kt">UInt8</span><span class="o">&gt;</span> <span class="o">=</span> <span class="mb">0b0101_0101</span>
+<span class="n">bitset</span><span class="o">.</span><span class="nf">reset</span><span class="p">()</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">bitset</span><span class="o">.</span><span class="n">isAllZeros</span><span class="p">)</span> <span class="c1">// true</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">public</span> <span class="k">mutating</span> <span class="kd">func</span> <span class="nf">reset</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10LoobeeCore6BitSetV2aeoiyyACyxGz_AEtFZ"></a>
+                    <a name="//apple_ref/swift/Method/&amp;=(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10LoobeeCore6BitSetV2aeoiyyACyxGz_AEtFZ">&amp;=(_:_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Stores the result of performing a bitwise AND operation on the two
+given BitSets in the left-hand-side variable.</p>
+<pre class="highlight swift"><code><span class="k">var</span> <span class="nv">bitset</span><span class="p">:</span> <span class="kt">BitSet</span><span class="o">&lt;</span><span class="kt">UInt8</span><span class="o">&gt;</span> <span class="o">=</span> <span class="mb">0b0101_0101</span>
+<span class="n">bitset</span> <span class="o">&amp;=</span> <span class="mb">0b0000_1110</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">bitset</span> <span class="o">==</span> <span class="mb">0b0000_0100</span><span class="p">)</span> <span class="c1">// true</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="o">&amp;=</span> <span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="k">inout</span> <span class="kt">BitSet</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="kt">BitSet</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10LoobeeCore6BitSetV1aoiyACyxGAE_AEtFZ"></a>
+                    <a name="//apple_ref/swift/Method/&amp;(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10LoobeeCore6BitSetV1aoiyACyxGAE_AEtFZ">&amp;(_:_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the result of performing a bitwise AND operation on the two
+given BitSets.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">bitset</span><span class="p">:</span> <span class="kt">BitSet</span><span class="o">&lt;</span><span class="kt">UInt8</span><span class="o">&gt;</span> <span class="o">=</span> <span class="mb">0b0101_0101</span>
+<span class="nf">print</span><span class="p">((</span><span class="n">bitset</span> <span class="o">&amp;</span> <span class="mb">0b0000_1110</span><span class="p">)</span> <span class="o">==</span> <span class="mb">0b0000_0100</span><span class="p">)</span> <span class="c1">// true</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="o">&amp;</span> <span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="kt">BitSet</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="kt">BitSet</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">BitSet</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10LoobeeCore6BitSetV2oeoiyyACyxGz_AEtFZ"></a>
+                    <a name="//apple_ref/swift/Method/|=(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10LoobeeCore6BitSetV2oeoiyyACyxGz_AEtFZ">|=(_:_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Stores the result of performing a bitwise OR operation on the two
+given BitSets in the left-hand-side variable.</p>
+<pre class="highlight swift"><code><span class="k">var</span> <span class="nv">bitset</span><span class="p">:</span> <span class="kt">BitSet</span><span class="o">&lt;</span><span class="kt">UInt8</span><span class="o">&gt;</span> <span class="o">=</span> <span class="mb">0b0101_0101</span>
+<span class="n">bitset</span> <span class="o">|=</span> <span class="mb">0b0000_1110</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">bitset</span> <span class="o">==</span> <span class="mb">0b0101_1111</span><span class="p">)</span> <span class="c1">// true</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="o">|=</span> <span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="k">inout</span> <span class="kt">BitSet</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="kt">BitSet</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10LoobeeCore6BitSetV1ooiyACyxGAE_AEtFZ"></a>
+                    <a name="//apple_ref/swift/Method/|(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10LoobeeCore6BitSetV1ooiyACyxGAE_AEtFZ">|(_:_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the result of performing a bitwise OR operation on the two
+given BitSets.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">bitset</span><span class="p">:</span> <span class="kt">BitSet</span><span class="o">&lt;</span><span class="kt">UInt8</span><span class="o">&gt;</span> <span class="o">=</span> <span class="mb">0b0101_0101</span>
+<span class="nf">print</span><span class="p">((</span><span class="n">bitset</span> <span class="o">|</span> <span class="mb">0b0000_1110</span><span class="p">)</span> <span class="o">==</span> <span class="mb">0b0101_1111</span><span class="p">)</span> <span class="c1">// true</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="o">|</span> <span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="kt">BitSet</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="kt">BitSet</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">BitSet</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10LoobeeCore6BitSetV2xeoiyyACyxGz_AEtFZ"></a>
+                    <a name="//apple_ref/swift/Method/^=(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10LoobeeCore6BitSetV2xeoiyyACyxGz_AEtFZ">^=(_:_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Stores the result of performing a bitwise XOR operation on the two
+given BitSets in the left-hand-side variable.</p>
+<pre class="highlight swift"><code><span class="k">var</span> <span class="nv">bitset</span><span class="p">:</span> <span class="kt">BitSet</span><span class="o">&lt;</span><span class="kt">UInt8</span><span class="o">&gt;</span> <span class="o">=</span> <span class="mb">0b0101_0101</span>
+<span class="n">bitset</span> <span class="o">^=</span> <span class="mb">0b0000_1110</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">bitset</span> <span class="o">==</span> <span class="mb">0b0101_1011</span><span class="p">)</span> <span class="c1">// true</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="o">^=</span> <span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="k">inout</span> <span class="kt">BitSet</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="kt">BitSet</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10LoobeeCore6BitSetV1xoiyACyxGAE_AEtFZ"></a>
+                    <a name="//apple_ref/swift/Method/^(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10LoobeeCore6BitSetV1xoiyACyxGAE_AEtFZ">^(_:_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the result of performing a bitwise XOR operation on the two
+given BitSets.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">bitset</span><span class="p">:</span> <span class="kt">BitSet</span><span class="o">&lt;</span><span class="kt">UInt8</span><span class="o">&gt;</span> <span class="o">=</span> <span class="mb">0b0101_0101</span>
+<span class="nf">print</span><span class="p">((</span><span class="n">bitset</span> <span class="o">^</span> <span class="mb">0b0000_1110</span><span class="p">)</span> <span class="o">==</span> <span class="mb">0b0101_1011</span><span class="p">)</span> <span class="c1">// true</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="o">^</span> <span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="kt">BitSet</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="kt">BitSet</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">BitSet</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10LoobeeCore6BitSetV1topyACyxGAEFZ"></a>
+                    <a name="//apple_ref/swift/Method/~(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10LoobeeCore6BitSetV1topyACyxGAEFZ">~(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns a value in which all the bits are flipped.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">bitset</span><span class="p">:</span> <span class="kt">BitSet</span><span class="o">&lt;</span><span class="kt">UInt8</span><span class="o">&gt;</span> <span class="o">=</span> <span class="mb">0b0101_0101</span>
+<span class="nf">print</span><span class="p">(</span><span class="o">~</span><span class="n">bitset</span> <span class="o">==</span> <span class="mb">0b1010_1010</span><span class="p">)</span> <span class="c1">// true</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">public</span> <span class="k">prefix</span> <span class="kd">static</span> <span class="kd">func</span> <span class="o">~</span> <span class="p">(</span><span class="nv">bitset</span><span class="p">:</span> <span class="kt">BitSet</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">BitSet</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10LoobeeCore6BitSetV4aggeoiyyACyxGz_xtFZ"></a>
+                    <a name="//apple_ref/swift/Method/&amp;&gt;&gt;=(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10LoobeeCore6BitSetV4aggeoiyyACyxGz_xtFZ">&amp;&gt;&gt;=(_:_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Performs binary shift right in the current object.</p>
+<pre class="highlight swift"><code><span class="k">var</span> <span class="nv">bitset</span><span class="p">:</span> <span class="kt">BitSet</span><span class="o">&lt;</span><span class="kt">UInt8</span><span class="o">&gt;</span> <span class="o">=</span> <span class="mb">0b0001_1110</span>
+<span class="n">bitset</span> <span class="o">&amp;&gt;&gt;=</span> <span class="mi">2</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">bitset</span> <span class="o">==</span> <span class="mb">0b0000_0111</span><span class="p">)</span> <span class="c1">// true</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="o">&amp;&gt;&gt;=</span> <span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="k">inout</span> <span class="kt">BitSet</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="kt">T</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10LoobeeCore6BitSetV3aggoiyACyxGAE_xtFZ"></a>
+                    <a name="//apple_ref/swift/Method/&amp;&gt;&gt;(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10LoobeeCore6BitSetV3aggoiyACyxGAE_xtFZ">&amp;&gt;&gt;(_:_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Performs binary shift right.</p>
+<pre class="highlight swift"><code><span class="k">var</span> <span class="nv">bitset</span><span class="p">:</span> <span class="kt">BitSet</span><span class="o">&lt;</span><span class="kt">UInt8</span><span class="o">&gt;</span> <span class="o">=</span> <span class="mb">0b0001_1110</span>
+<span class="k">let</span> <span class="nv">result</span> <span class="o">=</span> <span class="n">bitset</span> <span class="o">&amp;&gt;&gt;</span> <span class="mi">2</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">result</span> <span class="o">==</span> <span class="mb">0b0000_0111</span><span class="p">)</span> <span class="c1">// true</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="o">&amp;&gt;&gt;</span> <span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="kt">BitSet</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="kt">T</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">BitSet</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10LoobeeCore6BitSetV4alleoiyyACyxGz_xtFZ"></a>
+                    <a name="//apple_ref/swift/Method/&amp;&lt;&lt;=(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10LoobeeCore6BitSetV4alleoiyyACyxGz_xtFZ">&amp;&lt;&lt;=(_:_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Performs binary shift left in the current object.</p>
+<pre class="highlight swift"><code><span class="k">var</span> <span class="nv">bitset</span><span class="p">:</span> <span class="kt">BitSet</span><span class="o">&lt;</span><span class="kt">UInt8</span><span class="o">&gt;</span> <span class="o">=</span> <span class="mb">0b0001_1110</span>
+<span class="n">bitset</span> <span class="o">&amp;&lt;&lt;=</span> <span class="mi">2</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">bitset</span> <span class="o">==</span> <span class="mb">0b0111_1000</span><span class="p">)</span> <span class="c1">// true</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="o">&amp;&lt;&lt;=</span> <span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="k">inout</span> <span class="kt">BitSet</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="kt">T</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10LoobeeCore6BitSetV3alloiyACyxGAE_xtFZ"></a>
+                    <a name="//apple_ref/swift/Method/&amp;&lt;&lt;(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10LoobeeCore6BitSetV3alloiyACyxGAE_xtFZ">&amp;&lt;&lt;(_:_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Performs binary shift left.</p>
+<pre class="highlight swift"><code><span class="k">var</span> <span class="nv">bitset</span><span class="p">:</span> <span class="kt">BitSet</span><span class="o">&lt;</span><span class="kt">UInt8</span><span class="o">&gt;</span> <span class="o">=</span> <span class="mb">0b0001_1110</span>
+<span class="k">let</span> <span class="nv">result</span> <span class="o">=</span> <span class="n">bitset</span> <span class="o">&amp;&lt;&lt;</span> <span class="mi">2</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">result</span> <span class="o">==</span> <span class="mb">0b0111_1000</span><span class="p">)</span> <span class="c1">// true</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="o">&amp;&lt;&lt;</span> <span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="kt">BitSet</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="kt">T</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">BitSet</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:s27ExpressibleByIntegerLiteralP07integerD0x0cD4TypeQz_tcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(integerLiteral:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:s27ExpressibleByIntegerLiteralP07integerD0x0cD4TypeQz_tcfc">init(integerLiteral:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">integerLiteral</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">T</span><span class="o">.</span><span class="kt">IntegerLiteralType</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:s9EquatableP2eeoiySbx_xtFZ"></a>
+                    <a name="//apple_ref/swift/Method/==(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:s9EquatableP2eeoiySbx_xtFZ">==(_:_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="o">==</span> <span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="kt">BitSet</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="kt">BitSet</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:s20TextOutputStreamableP5write2toyqd__z_ts0aB6StreamRd__lF"></a>
+                    <a name="//apple_ref/swift/Method/write(to:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:s20TextOutputStreamableP5write2toyqd__z_ts0aB6StreamRd__lF">write(to:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="n">write</span><span class="o">&lt;</span><span class="kt">Target</span><span class="o">&gt;</span><span class="p">(</span><span class="n">to</span> <span class="nv">target</span><span class="p">:</span> <span class="k">inout</span> <span class="kt">Target</span><span class="p">)</span> <span class="k">where</span> <span class="kt">Target</span> <span class="p">:</span> <span class="kt">TextOutputStream</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:s8HashableP9hashValueSivp"></a>
+                    <a name="//apple_ref/swift/Property/hashValue" class="dashAnchor"></a>
+                    <a class="token" href="#/s:s8HashableP9hashValueSivp">hashValue</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">public</span> <span class="k">var</span> <span class="nv">hashValue</span><span class="p">:</span> <span class="kt">Int</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:s28CustomDebugStringConvertibleP16debugDescriptionSSvp"></a>
+                    <a name="//apple_ref/swift/Property/debugDescription" class="dashAnchor"></a>
+                    <a class="token" href="#/s:s28CustomDebugStringConvertibleP16debugDescriptionSSvp">debugDescription</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">public</span> <span class="k">var</span> <span class="nv">debugDescription</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:s23CustomStringConvertibleP11descriptionSSvp"></a>
+                    <a name="//apple_ref/swift/Property/description" class="dashAnchor"></a>
+                    <a class="token" href="#/s:s23CustomStringConvertibleP11descriptionSSvp">description</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">public</span> <span class="k">var</span> <span class="nv">description</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:s25LosslessStringConvertiblePyxSgSScfc"></a>
+                    <a name="//apple_ref/swift/Method/init(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:s25LosslessStringConvertiblePyxSgSScfc">init(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">public</span> <span class="nf">init</span><span class="p">?(</span><span class="n">_</span> <span class="nv">description</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      </article>
+    </div>
+    <section class="footer">
+      <p>&copy; 2018 <a class="link" href="" target="_blank" rel="external">qRoC</a>. All rights reserved. (Last updated: 2018-08-19)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+    </section>
+  </body>
+</div>
+</html>
