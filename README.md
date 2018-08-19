@@ -4,6 +4,7 @@
 
 ![WIP](https://img.shields.io/badge/status-WIP-red.svg?style=flat)
 [![Build Status - Master](https://travis-ci.org/qRoC/Loobee.svg?branch=master)](https://travis-ci.org/qRoC/Loobee)
+[![Coverage Status](https://coveralls.io/repos/github/qRoC/Loobee/badge.svg?branch=master)](https://coveralls.io/github/qRoC/Loobee?branch=master)
 ![macOS](https://img.shields.io/badge/Swift-4.2-green.svg?style=flat)
 ![Platforms](https://img.shields.io/badge/platforms-OS%20X%20%7C%20Linux%20-green.svg?style=flat)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)
