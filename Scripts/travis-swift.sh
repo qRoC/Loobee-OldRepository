@@ -9,9 +9,8 @@ if [[ -n "$BUILD_LINK" ]]; then
     tar xzf Swift.tar.gz -C Swift --strip 1
     export PATH="${PWD}/Swift/usr/bin:${PATH}"
   elif [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
-    curl -o swift-4.0-osx.pkg -L ${BUILD_LINK}
-    sudo installer -pkg swift-4.0-osx.pkg -target /
+    curl -o swift-osx.pkg -L ${BUILD_LINK}
+    sudo installer -pkg swift-osx.pkg -target /
     export TOOLCHAINS=swift
   fi
 fi
-
