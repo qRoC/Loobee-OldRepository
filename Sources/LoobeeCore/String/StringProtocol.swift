@@ -6,6 +6,7 @@
 // file that was distributed with this source code.
 
 extension StringProtocol {
+    /// Compares ASCII strings, while ignoring differences in case.
     public func caseInsensitiveASCIICompare(_ other: Self) -> Bool {
         if self.count != other.count {
             return false
