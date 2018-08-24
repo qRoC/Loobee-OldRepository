@@ -232,6 +232,13 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/qroc/Development/MyProjects/Loobee/Sources/LoobeeCore/String/StringProtocol.swift",
+      "line": 9,
+      "symbol": "StringProtocol.caseInsensitiveASCIICompare(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/qroc/Development/MyProjects/Loobee/Sources/LoobeeCore/Synchronization/Atomic/AtomicBox.swift",
       "line": 14,
       "symbol": "AtomicBox.init(object:)",

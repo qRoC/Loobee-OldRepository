@@ -12,13 +12,16 @@ import PackageDescription
 var targets: [PackageDescription.Target] = [
     .target(name: "CLoobeeCore", dependencies: []),
     .target(name: "LoobeeCore", dependencies: ["CLoobeeCore"]),
+    .target(name: "LoobeeHttp", dependencies: ["LoobeeCore"]),
     .testTarget(name: "LoobeeCoreTests", dependencies: ["LoobeeCore"]),
+    .testTarget(name: "LoobeeHttpTests", dependencies: ["LoobeeHttp"]),
 ]
 
 let package = Package(
     name: "Loobee",
     products: [
         .library(name: "LoobeeCore", targets: ["LoobeeCore"]),
+        .library(name: "LoobeeHttp", targets: ["LoobeeHttp"]),
     ],
     targets: targets,
     swiftLanguageVersions: [.v4_2]

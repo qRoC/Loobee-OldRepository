@@ -1253,6 +1253,19 @@ extension Fnva64Tests {
     ]
 }
 
+extension MoveonlyTests {
+    static let __allTests = [
+        ("testMoveClass", testMoveClass),
+        ("testMoveStruct", testMoveStruct),
+    ]
+}
+
+extension StringProtocolTests {
+    static let __allTests = [
+        ("testCaseInsensitiveASCIICompareString", testCaseInsensitiveASCIICompareString),
+    ]
+}
+
 #if !os(macOS)
 public func __allTests() -> [XCTestCaseEntry] {
     return [
@@ -1275,6 +1288,8 @@ public func __allTests() -> [XCTestCaseEntry] {
         testCase(Fnv32Tests.__allTests),
         testCase(Fnv64Tests.__allTests),
         testCase(Fnva64Tests.__allTests),
+        testCase(MoveonlyTests.__allTests),
+        testCase(StringProtocolTests.__allTests),
     ]
 }
 #endif
