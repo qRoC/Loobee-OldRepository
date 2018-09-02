@@ -7,6 +7,7 @@
 
 /// Provides information about the current environment.
 public class Environment {
+    ///
     public static let current = Environment()
 
     private init() {
