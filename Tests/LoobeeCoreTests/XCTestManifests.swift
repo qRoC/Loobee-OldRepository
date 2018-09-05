@@ -1255,8 +1255,8 @@ extension Fnva64Tests {
 
 extension MoveonlyTests {
     static let __allTests = [
-        ("testMoveClass", testMoveClass),
-        ("testMoveStruct", testMoveStruct),
+        ("testNoCopy", testNoCopy),
+        ("testMove", testMove),
     ]
 }
 

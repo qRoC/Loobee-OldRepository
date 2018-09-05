@@ -13,6 +13,3 @@ Package.resolved
 # Idea
 /.idea
 
-#Project private
-Sources/LoobeeHttp
-Sources/LoobeeCore/IO
