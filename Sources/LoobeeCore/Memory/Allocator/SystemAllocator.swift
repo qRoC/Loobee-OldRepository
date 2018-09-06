@@ -9,8 +9,8 @@
 import func Darwin.C.stdlib.malloc
 import func Darwin.C.stdlib.free
 #elseif os(Linux)
-import func Glibc.C.stdlib.malloc
-import func Glibc.C.stdlib.free
+import func Glibc.malloc
+import func Glibc.free
 #endif
 
 /// Uses default `malloc` and `free`.
