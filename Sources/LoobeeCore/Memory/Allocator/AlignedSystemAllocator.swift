@@ -13,7 +13,7 @@ import func Glibc.C.stdlib.posix_memalign
 import func Glibc.C.stdlib.free
 #endif
 
-/// Uses default `malloc` and `free`.
+/// Uses `posix_memalign` and `free`.
 public struct AlignedSystemAllocator<T> {
     public func allocate(count: Count, alignment: Alignment) -> UnsafeMutablePointer<T> {
         var pointer:UnsafeMutableRawPointer? = nil
