@@ -7,7 +7,7 @@
 
 ///
 public protocol IntrusiveSListNode: class {
-    var next : Self? { get set }
+    var nextNode : Self? { get set }
 }
 
 /// Intrusive singly-linked list.

@@ -9,8 +9,8 @@
 import func Darwin.C.stdlib.posix_memalign
 import func Darwin.C.stdlib.free
 #elseif os(Linux)
-import func Glibc.C.stdlib.posix_memalign
-import func Glibc.C.stdlib.free
+import func Glibc.posix_memalign
+import func Glibc.free
 #endif
 
 /// Uses `posix_memalign` and `free`.
