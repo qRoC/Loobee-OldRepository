@@ -6,7 +6,6 @@
 // file that was distributed with this source code.
 
 /// Protocol for mark of moveonly structs.
-///
 public protocol Moveonly {
     /// Called when the object is destroyed.
     func _deinit()
