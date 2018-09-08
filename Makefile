@@ -51,3 +51,12 @@ xcode:
 .PHONY: linuxmain
 linuxmain:
 	swift test --generate-linuxmain
+
+.PHONY: install-dev-tools
+install-dev-tools:
+	curl -o scripts/external/gyb.py https://raw.githubusercontent.com/apple/swift/master/utils/gyb.py
+	chmod +x scripts/external/gyb.py
+
+.PHONY: gyb
+gyb:
+	find . -name '*.gyb' | while read file; do scripts/external/gyb.py --line-directive '' -o "${file%.gyb}" "$file"; done

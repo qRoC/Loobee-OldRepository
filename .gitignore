@@ -13,3 +13,6 @@ Package.resolved
 # Idea
 /.idea
 
+# Scripts
+scripts/external/*
+!scripts/external/.gitkeep
