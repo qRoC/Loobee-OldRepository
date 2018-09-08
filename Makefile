@@ -59,4 +59,4 @@ install-dev-tools:
 
 .PHONY: gyb
 gyb:
-	find . -name '*.gyb' | while read file; do scripts/external/gyb.py --line-directive '' -o "${file%.gyb}" "$file"; done
+	find . -name '*.gyb' | while read file; do scripts/external/gyb.py --line-directive '' -o "$${file%.gyb}" "$$file"; done
