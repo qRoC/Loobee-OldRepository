@@ -16,7 +16,7 @@ import func Glibc.free
 /// Uses `posix_memalign` and `free`.
 public struct AlignedSystemAllocator<T> {
     public func allocate(count: Count, alignment: Alignment) -> UnsafeMutablePointer<T> {
-        var pointer:UnsafeMutableRawPointer? = nil
+        var pointer: UnsafeMutableRawPointer?
         let resultCode = posix_memalign(&pointer, alignment.size, MemoryLayout<T>.stride * count)
         if _slowPath(resultCode != 0) {
             fatalError("AlignedSystemAllocator: Cannot allocate memory. Code: \(resultCode)")

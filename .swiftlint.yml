@@ -32,10 +32,8 @@ opt_in_rules:
   - function_body_length
   - function_parameter_count
   - generic_type_name
-  - identifier_name
   - implicit_getter
   - implicit_return
-  - implicitly_unwrapped_optional
   - is_disjoint
   - joined_default_parameter
   - leading_whitespace
@@ -102,6 +100,7 @@ disabled_rules:
   - large_tuple
   - no_grouping_extension
   - explicit_type_interface
+  - identifier_name
 
 included:
   - Sources
@@ -123,15 +122,23 @@ file_header:
 file_length:
   ignore_comment_only_lines: true
 
-identifier_name:
-  min_length: 0
-  validates_start_with_lowercase: true
-
-line_length: 120
+line_length:
+  error: 120
+  ignores_urls: true
 
 number_separator:
   minimum_length: 5
 
 trailing_comma:
   mandatory_comma: true
+
+cyclomatic_complexity:
+  ignores_case_statements: true
+
+custom_rules:
+  comments_space:
+    name: "Space After Comment"
+    regex: '(^ *//\w+)'
+    message: "There should be a space after //"
+    severity: warning
 
