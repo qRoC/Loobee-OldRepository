@@ -1,7 +1,7 @@
 ## Loobee is a library of Swift components.
 
 
-![new repository](https://github.com/Loobee/Loobee)
+[new repository](https://github.com/Loobee/Loobee)
 
 ![WIP](https://img.shields.io/badge/status-WIP-red.svg?style=flat)
 [![Build Status - Master](https://travis-ci.org/qRoC/Loobee.svg?branch=master)](https://travis-ci.org/qRoC/Loobee)
